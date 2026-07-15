@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://tf8ecqdc3m6i"]
+
+[ext_resource type="Texture2D" uid="uid://dh4oppvnk8lma" path="res://TileMaps/Sprites/Floors/Floors_Tiles.png" id="1_ytt5s"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fd5k"]
+texture = ExtResource("1_ytt5s")
+2:10/0 = 0
+1:10/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+3:11/0 = 0
+2:11/0 = 0
+1:11/0 = 0
+3:10/0 = 0
+4:8/0 = 0
+4:7/0 = 0
+4:6/0 = 0
+3:6/0 = 0
+3:8/0 = 0
+13:11/0 = 0
+12:11/0 = 0
+11:11/0 = 0
+11:10/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+13:10/0 = 0
+12:10/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+11:1/0 = 0
+10:1/0 = 0
+10:2/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+13:5/0 = 0
+12:5/0 = 0
+11:5/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+14:2/0 = 0
+14:1/0 = 0
+13:1/0 = 0
+11:6/0 = 0
+10:6/0 = 0
+10:7/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+14:7/0 = 0
+14:6/0 = 0
+13:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rq4lg"]
+physics_layer_0/collision_layer = 16
+sources/0 = SubResource("TileSetAtlasSource_6fd5k")
+
+[node name="Grass01" type="TileMapLayer" unique_id=492596631]
+tile_set = SubResource("TileSet_rq4lg")
