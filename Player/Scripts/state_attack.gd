@@ -10,9 +10,10 @@ var attacking:bool = false
 
 func Enter()->void:
 	attacking = true
-	
+	player.hurt_box.monitoring = true
 	player.UpdateAnimation("attack_hit")
-	player.sprite.animation_finished.connect(EndAttack)
+	if not player.sprite.animation_finished.is_connected(EndAttack):
+		player.sprite.animation_finished.connect(EndAttack)
 	
 func Process(_delta:float)->State:
 	player.velocity -= decelerate_speed*_delta*player.velocity
@@ -27,3 +28,4 @@ func Process(_delta:float)->State:
 
 func EndAttack()->void:
 	attacking  =  false
+	player.hurt_box.monitoring = false

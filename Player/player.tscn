@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://fol64g36ef4a" path="res://Player/Sprites/Run/Run_Up-Sheet.png" id="10_o28un"]
 [ext_resource type="Script" uid="uid://c5nnicesghcqt" path="res://Player/Scripts/state_walk.gd" id="10_p5o4e"]
 [ext_resource type="Script" uid="uid://ck26jh4k7oh8l" path="res://Player/Scripts/state_attack.gd" id="11_apopc"]
+[ext_resource type="PackedScene" uid="uid://cahchd2omtq51" path="res://GeneralNodes/HitBox/hit_box.tscn" id="18_b1ygp"]
+[ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="19_o28un"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1l10g"]
 atlas = ExtResource("2_5htga")
@@ -67,7 +69,6 @@ atlas = ExtResource("4_dkpta")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_apopc"]
-load_path = "res://.godot/imported/Carry_Idle_Down-Sheet.png-4ab2ddc7b400e648239a9adc2ba34640.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
 atlas = SubResource("CompressedTexture2D_apopc")
@@ -280,7 +281,7 @@ region = Rect2(320, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_6pogt"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_1l10g")
 }, {
 "duration": 1.0,
@@ -297,7 +298,7 @@ animations = [{
 "speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_wvbyc")
 }, {
 "duration": 1.0,
@@ -314,7 +315,7 @@ animations = [{
 "speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_uvbbp")
 }, {
 "duration": 1.0,
@@ -419,7 +420,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -442,7 +443,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_side",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -540,15 +541,20 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fhl08"]
 radius = 7.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_o28un"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n471f"]
+radius = 11.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1667374712]
 collision_mask = 16
 script = ExtResource("1_x3vf3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019363973]
-position = Vector2(1, -16)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_6pogt")
-animation = &"run_up"
-frame_progress = 0.555763
+animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701818206]
 shape = SubResource("CircleShape2D_fhl08")
@@ -564,3 +570,20 @@ script = ExtResource("10_p5o4e")
 
 [node name="Attack" type="Node" parent="stateMachine" unique_id=1096982032]
 script = ExtResource("11_apopc")
+
+[node name="HitBox" parent="." unique_id=1050192186 instance=ExtResource("18_b1ygp")]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=901939852]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_o28un")
+debug_color = Color(0.6263142, 0.52700806, 0.20440516, 0.41960785)
+
+[node name="HurtBox" parent="." unique_id=1184801260 instance=ExtResource("19_o28un")]
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=499794691]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_n471f")
+debug_color = Color(0.98106664, 0.11512721, 0.19521293, 0.41960785)

@@ -1,38 +1,30 @@
-class_name Player extends CharacterBody2D
+class_name Enemy extends CharacterBody2D
 
 var direction:Vector2 = Vector2.ZERO
 var cardinal_direction:Vector2 = Vector2.DOWN
- 
-var hp:int =6
+var DIR4 = [Vector2.DOWN,Vector2.UP,Vector2.LEFT,Vector2.RIGHT]
+var hp:int = 6
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var state_machine: PlayerStateMachine = $stateMachine
+@onready var enemy_state_machine: Enemy_State_Machine = $EnemyStateMachine
 @onready var hit_box: HitBox = $HitBox
-@onready var hurt_box_shape: CollisionShape2D = $HurtBox/CollisionShape2D
-@onready var hurt_box: HurtBox = $HurtBox
-
 
 func _ready() -> void:
-	hurt_box.monitoring  =  false
 	hit_box.Damaged.connect(TakeDamaged)
-	state_machine.Initialize(self)
+	enemy_state_machine.Initialize(self)
 	pass 
 
 func _process(delta: float) -> void:
-	UpdateHurtBoxDirection()
-	direction = Vector2(
-			Input.get_axis("left","right"),
-			Input.get_axis("up","down")
-		).normalized()
 	pass
 
 func _physics_process(delta: float) -> void:
 	
 #这是Character2D根据velocity移动的方法
 	move_and_slide()
-
+	
+	
 func SetDirection()->bool:
-	var new_dir:Vector2 = cardinal_direction
+	var new_dir:Vector2 = DIR4.pick_random()
 	if direction == Vector2.ZERO:
 		return false
 	if direction.y==0:
@@ -41,6 +33,7 @@ func SetDirection()->bool:
 		new_dir = Vector2.UP if direction.y<0 else Vector2.DOWN
 	if new_dir ==  cardinal_direction:
 		return false
+		
 	cardinal_direction = new_dir
 
 	sprite.scale.x =-1 if cardinal_direction == Vector2.LEFT  else 1
@@ -51,24 +44,9 @@ func UpdateAnimation(state:String)->void:
 
 
 func AnimDirection()->String:
-	if cardinal_direction == Vector2.DOWN:
-		return "down"
-	elif cardinal_direction == Vector2.UP:
-		return "up"
-	else:
 		return "side"
-		
+
 func TakeDamaged(hurt_box:HurtBox):
 	hp-=hurt_box.damage
 	print(name)
 	print(hp)
-	
-func UpdateHurtBoxDirection() -> void:
-	if cardinal_direction == Vector2.DOWN:
-		hurt_box_shape.position = Vector2(0,0)
-	elif cardinal_direction == Vector2.UP:
-		hurt_box_shape.position = Vector2(0, -18)
-	elif cardinal_direction == Vector2.LEFT:
-		hurt_box_shape.position = Vector2(-16, -6)
-	elif cardinal_direction == Vector2.RIGHT:
-		hurt_box_shape.position = Vector2(16, -6)
