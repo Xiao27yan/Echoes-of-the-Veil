@@ -2,8 +2,14 @@ class_name Player extends CharacterBody2D
 
 var direction:Vector2 = Vector2.ZERO
 var cardinal_direction:Vector2 = Vector2.DOWN
- 
+var current_weapon = {
+	"name":"slice",
+	"attack_animation":"attack_slice",
+	"damage":3
+}
 var hp:int =6
+
+signal weaponChanged
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var state_machine: PlayerStateMachine = $stateMachine
@@ -72,3 +78,19 @@ func UpdateHurtBoxDirection() -> void:
 		hurt_box_shape.position = Vector2(-16, -6)
 	elif cardinal_direction == Vector2.RIGHT:
 		hurt_box_shape.position = Vector2(16, -6)
+		
+func _unhandled_input(_event: InputEvent) -> void:
+	if _event.is_action_pressed("weapon1"):
+		current_weapon.name  = 'slice'
+		current_weapon.attack_animation="attack_slice"
+		current_weapon.damage=3
+		
+	elif  _event.is_action_pressed("weapon2"):
+		current_weapon.name  = 'pierce'
+		current_weapon.attack_animation="attack_pierce"
+		current_weapon.damage=2
+	elif _event.is_action_pressed("weapon3"):
+		current_weapon.name  = 'hit'
+		current_weapon.attack_animation="attack_hit"
+		current_weapon.damage=1
+	weaponChanged.emit()

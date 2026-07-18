@@ -9,6 +9,10 @@ class_name Enemy_State_Run extends Enemy_State
 var _timer:float =  0
 var move_speed:float = 50.0 
 
+func Init()->void:
+	pass
+
+
 func Enter():
 	enemy.direction = enemy.DIR4.pick_random()
 	_timer = randf_range(state_duration_min,state_duration_max)

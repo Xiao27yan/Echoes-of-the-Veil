@@ -11,7 +11,7 @@ var attacking:bool = false
 func Enter()->void:
 	attacking = true
 	player.hurt_box.monitoring = true
-	player.UpdateAnimation("attack_hit")
+	player.UpdateAnimation('attack_'+player.current_weapon.name)
 	if not player.sprite.animation_finished.is_connected(EndAttack):
 		player.sprite.animation_finished.connect(EndAttack)
 	

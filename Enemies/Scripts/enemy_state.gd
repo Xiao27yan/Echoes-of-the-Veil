@@ -1,7 +1,7 @@
 class_name Enemy_State extends Node
 
-static var enemy:Enemy
-static var enemy_state_machine: Enemy_State_Machine
+var enemy:Enemy
+var enemy_state_machine: Enemy_State_Machine
 
 func _ready():
 	pass

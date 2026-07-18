@@ -8,6 +8,9 @@ class_name Enemy_State_Idle extends Enemy_State
 
 var _timer:float  = 0.0
 
+func Init()->void:
+	pass
+
 func Enter()->void:
 	enemy.velocity = Vector2.ZERO
 	_timer = randf_range(state_duration_min,state_duration_max)
