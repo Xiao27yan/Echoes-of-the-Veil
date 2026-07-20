@@ -4,8 +4,7 @@ var _direction:Vector2
 var damaged_position:Vector2 
 var _animation_finished:bool  = false
 
-@export var knockback_speed:float = 400.0
-
+@onready var chase: Enemy_State_Chase = $"../Chase"
 @onready var next_state: Enemy_State_Idle = $"../Idle"
 
 func Init()->void:
@@ -15,7 +14,7 @@ func Enter()->void:
 	_animation_finished = false
 	_direction = damaged_position.direction_to(enemy.global_position)
 	enemy.direction = _direction
-	enemy.velocity = enemy.direction*knockback_speed
+	enemy.velocity = enemy.direction*enemy.knockback_speed
 
 	enemy.UpdateAnimation('stun')	
 	enemy.sprite.animation_finished.connect(_on_animation_finished)
@@ -24,6 +23,9 @@ func Enter()->void:
 func Process(_delta:float)->Enemy_State:
 	
 	if _animation_finished == true:
+		if enemy.player != null:
+				return chase
+	
 		return next_state
 		
 	enemy.velocity -= enemy.velocity*enemy.decelerate_speed*_delta

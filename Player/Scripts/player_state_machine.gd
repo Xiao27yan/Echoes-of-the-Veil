@@ -27,6 +27,7 @@ func Initialize(_player:Player)->void:
 	for c in get_children():
 		if c is  State:
 			states.append(c)
+			c.Init()
 		states[0].player = _player
 		states[0].state_machine = self
 		

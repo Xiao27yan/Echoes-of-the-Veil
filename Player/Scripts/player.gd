@@ -9,12 +9,15 @@ var current_weapon = {
 }
 var hp:int =6
 
-signal weaponChanged
+signal player_damaged
+signal player_destroyed
+
+@export var decelerate_speed :float =10.0
+@export var knockback_speed:float = 400.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var state_machine: PlayerStateMachine = $stateMachine
 @onready var hit_box: HitBox = $HitBox
-@onready var hurt_box_shape: CollisionShape2D = $HurtBox/CollisionShape2D
 @onready var hurt_box: HurtBox = $HurtBox
 
 
@@ -25,7 +28,7 @@ func _ready() -> void:
 	pass 
 
 func _process(delta: float) -> void:
-	UpdateHurtBoxDirection()
+	hurt_box.UpdateHurtBoxDirection()
 	direction = Vector2(
 			Input.get_axis("left","right"),
 			Input.get_axis("up","down")
@@ -65,19 +68,15 @@ func AnimDirection()->String:
 		return "side"
 		
 func TakeDamaged(hurt_box:HurtBox):
-	hp-=hurt_box.damage
-	print(name)
-	print(hp)
-	
-func UpdateHurtBoxDirection() -> void:
-	if cardinal_direction == Vector2.DOWN:
-		hurt_box_shape.position = Vector2(0,0)
-	elif cardinal_direction == Vector2.UP:
-		hurt_box_shape.position = Vector2(0, -18)
-	elif cardinal_direction == Vector2.LEFT:
-		hurt_box_shape.position = Vector2(-16, -6)
-	elif cardinal_direction == Vector2.RIGHT:
-		hurt_box_shape.position = Vector2(16, -6)
+	hp -= hurt_box.damage
+		
+	if hp > 0:
+		player_damaged.emit(hurt_box)
+		print(name)
+		print(hp)
+	else:
+		player_destroyed.emit()
+	return
 		
 func _unhandled_input(_event: InputEvent) -> void:
 	if _event.is_action_pressed("weapon1"):
@@ -93,4 +92,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		current_weapon.name  = 'hit'
 		current_weapon.attack_animation="attack_hit"
 		current_weapon.damage=1
-	weaponChanged.emit()
+	OnweaponChanged()
+	
+func OnweaponChanged()->void:
+	hurt_box.damage  = current_weapon.damage

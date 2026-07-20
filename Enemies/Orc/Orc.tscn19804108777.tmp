@@ -251,10 +251,13 @@ radius = 5.0
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_23xon"]
-radius = 236.13556
+radius = 82.9759
 
 [node name="Orc" type="CharacterBody2D" unique_id=1110341561]
 script = ExtResource("1_qiuxd")
+knockback_speed = null
+decelerate_speed = null
+move_speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
 position = Vector2(0, -7)
