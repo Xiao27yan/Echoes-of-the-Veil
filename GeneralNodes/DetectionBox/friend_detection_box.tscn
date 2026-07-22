@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dfrasj4kry68f"]
-
-[ext_resource type="Script" uid="uid://s5kvpuh5lbvf" path="res://GeneralNodes/DetectionBox/friend_detection_box.gd" id="1_jh438"]
-
-[node name="DetectionBox" type="Area2D" unique_id=2006781143]
-script = ExtResource("1_jh438")

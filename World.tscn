@@ -7,17 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://bo1t2skvy0wlx" path="res://TileMaps/Sprites/Shadows.png" id="3_p1v5b"]
 [ext_resource type="Texture2D" uid="uid://dpl3wi6jpb1hg" path="res://TileMaps/Sprites/Trees/Model_01/Size_04.png" id="4_fv4w7"]
 [ext_resource type="PackedScene" uid="uid://d010evex8ceyf" path="res://Player/player.tscn" id="4_wygdx"]
-[ext_resource type="PackedScene" uid="uid://bhqpd05di4bvh" path="res://Enemies/Orc/Orc.tscn" id="5_eu7l1"]
+[ext_resource type="PackedScene" uid="uid://bhqpd05di4bvh" path="res://Entities/Orc/Orc.tscn" id="5_eu7l1"]
 [ext_resource type="Texture2D" uid="uid://b80cq0pkvi2wi" path="res://TileMaps/Sprites/Trees/Model_01/Size_03.png" id="5_fv4w7"]
 [ext_resource type="Texture2D" uid="uid://dm0aaivo5l0k2" path="res://TileMaps/Sprites/Water/Water_tiles.png" id="6_fvag4"]
 [ext_resource type="Texture2D" uid="uid://dffpvqkbas25n" path="res://TileMaps/Sprites/Vegetation/Vegetation.png" id="6_kva58"]
-[ext_resource type="PackedScene" uid="uid://m3deg8uph38n" path="res://Enemies/Soldier01.tscn" id="10_1fphk"]
+[ext_resource type="PackedScene" uid="uid://m3deg8uph38n" path="res://Entities/Soldier/Soldier01.tscn" id="10_1fphk"]
 [ext_resource type="Texture2D" uid="uid://cu31rvvqspu4b" path="res://TileMaps/Sprites/Buildings/Props.png" id="11_gn8l5"]
 [ext_resource type="Texture2D" uid="uid://dg5k6jxrk2uiv" path="res://TileMaps/Sprites/Buildings/Resources.png" id="12_6w02q"]
 [ext_resource type="Texture2D" uid="uid://cmeobxgkt26rw" path="res://TileMaps/Sprites/Buildings/Roofs.png" id="13_1fphk"]
-[ext_resource type="PackedScene" uid="uid://oe6c11s4acia" path="res://Enemies/Soldier02.tscn" id="13_sjtuv"]
+[ext_resource type="PackedScene" uid="uid://oe6c11s4acia" path="res://Entities/Soldier/Soldier02.tscn" id="13_sjtuv"]
 [ext_resource type="Texture2D" uid="uid://cik8j5q3y41ee" path="res://TileMaps/Sprites/Buildings/Interior_Walls_01.png" id="14_sjtuv"]
 [ext_resource type="Texture2D" uid="uid://cyp5jxndh22iu" path="res://TileMaps/Sprites/Buildings/Furniture.png" id="15_cvq6i"]
+[ext_resource type="PackedScene" uid="uid://c1ydy2udfovhi" path="res://GeneralNodes/SoldierSpawner/SoldierSpawner.tscn" id="19_cvq6i"]
+[ext_resource type="PackedScene" uid="uid://d2focgev6uavh" path="res://GeneralNodes/OrcSpawner/OrcSpawner.tscn" id="20_6tx0c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bah7m"]
 texture = ExtResource("1_js7pq")
@@ -11443,20 +11445,18 @@ tile_set = SubResource("TileSet_gn8l5")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1409914619]
 
-[node name="Orc" parent="Entities" unique_id=1834413711 instance=ExtResource("5_eu7l1")]
-position = Vector2(308, -48)
-
-[node name="Orc2" parent="Entities" unique_id=442954286 instance=ExtResource("5_eu7l1")]
-position = Vector2(531, 105)
-
 [node name="Player" parent="Entities" unique_id=1667374712 instance=ExtResource("4_wygdx")]
 z_index = 8
 position = Vector2(145, 197)
 
-[node name="Soldier2" parent="Entities" unique_id=595964141 instance=ExtResource("10_1fphk")]
+[node name="Soldier01" parent="Entities" unique_id=1110341561 instance=ExtResource("10_1fphk")]
+position = Vector2(-351, -88)
 
-[node name="Soldier02" parent="Entities" unique_id=1110341561 instance=ExtResource("13_sjtuv")]
-position = Vector2(-177, 86)
+[node name="Soldier02" parent="Entities" unique_id=1294244827 instance=ExtResource("13_sjtuv")]
+position = Vector2(-377, 30)
+
+[node name="Orc" parent="Entities" unique_id=1819431776 instance=ExtResource("5_eu7l1")]
+position = Vector2(0, -26)
 
 [node name="Room" type="Node2D" parent="." unique_id=1477195848]
 position = Vector2(-1179, -148)
@@ -11466,6 +11466,7 @@ tile_map_data = PackedByteArray("AAAvABIAAgAEAAoAAAAvABMAAgAEAAsAAAAwABIAAgAEAAo
 tile_set = SubResource("TileSet_ydbc3")
 
 [node name="roofs" type="TileMapLayer" parent="Room" unique_id=627804739]
+tile_map_data = PackedByteArray("AAAuABUAAAAEAAsAAAA=")
 tile_set = SubResource("TileSet_rp4qs")
 
 [node name="Wall" type="TileMapLayer" parent="Room" unique_id=440313536]
@@ -11473,5 +11474,11 @@ tile_map_data = PackedByteArray("AAAqABcAAQAAAAUAAAAqABgAAQAAAAYAAAAqABkAAQAAAAc
 tile_set = SubResource("TileSet_gtthi")
 
 [node name="Funiture" type="TileMapLayer" parent="Room" unique_id=13103745]
-tile_map_data = PackedByteArray("AAAyABgAAAAIABIAAAAyABkAAAAIABMAAAAzABgAAAAJABIAAAAzABkAAAAJABMAAAAsABcAAAAFABgAAAAsABgAAAAFABkAAAAtABcAAAAGABgAAAAtABgAAAAGABkAAAA0ABoAAAAAAB8AADAqABoAAAAAAB8AADAyABoAAAAGAB0AAAAzABoAAAAIAB0AAAA=")
+tile_map_data = PackedByteArray("AAAyABgAAAAIABIAAAAyABkAAAAIABMAAAAzABgAAAAJABIAAAAzABkAAAAJABMAAAAsABcAAAAFABgAAAAsABgAAAAFABkAAAAtABcAAAAGABgAAAAtABgAAAAGABkAAAA0ABoAAAAAAB8AADAqABoAAAAAAB8AADAyABoAAAAGAB0AAAAzABoAAAAIAB0AAAAqABEAAAAAABQAAAAqABIAAAAAABUAAAAqABMAAAAAABYAAAAqABQAAAAAABcAAAArABEAAAABABQAAAArABIAAAABABUAAAArABMAAAABABYAAAArABQAAAABABcAAAA=")
 tile_set = SubResource("TileSet_fif40")
+
+[node name="SoldierSpawner" parent="." unique_id=1292699862 instance=ExtResource("19_cvq6i")]
+position = Vector2(-264, -39)
+
+[node name="OrcSpawner" parent="." unique_id=201257018 instance=ExtResource("20_6tx0c")]
+position = Vector2(93, -30)

@@ -11,6 +11,5 @@ func _process(delta: float) -> void:
 
 func TakeDamaged(hurt_box:HurtBox):
 	Damaged.emit(hurt_box)
-	print('---------------')
 	
 	

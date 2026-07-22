@@ -16,6 +16,14 @@ signal player_destroyed
 @export var decelerate_speed :float =10.0
 @export var knockback_speed:float = 400.0
 
+enum Faction {
+	PLAYER,
+	ALLY,
+	ENEMY,
+	NEUTRAL
+}
+@export var faction: Faction = Faction.PLAYER
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var state_machine: PlayerStateMachine = $stateMachine
 @onready var hit_box: HitBox = $HitBox

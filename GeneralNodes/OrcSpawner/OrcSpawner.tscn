@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2focgev6uavh"]
+
+[ext_resource type="Script" uid="uid://kf5q3v72hstu" path="res://GeneralNodes/OrcSpawner/OrcSpawner.gd" id="1_nda7y"]
+[ext_resource type="PackedScene" uid="uid://bhqpd05di4bvh" path="res://Entities/Orc/Orc.tscn" id="2_vmvn2"]
+
+[node name="OrcSpawner" type="Node2D" unique_id=1292699862]
+script = ExtResource("1_nda7y")
+unit_scene = ExtResource("2_vmvn2")
