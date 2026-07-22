@@ -1,6 +1,8 @@
-class_name Dectection_Box extends Area2D
+class_name friend_Dectection_Box extends Area2D
 
-@onready var orc: Enemy = $".."
+@onready var orc Enemy = $".."
+
+
 @onready var chase: Enemy_State_Chase = $"../EnemyStateMachine/Chase"
 
 

@@ -16,7 +16,8 @@ var hp:int = 6
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var enemy_state_machine: Enemy_State_Machine = $EnemyStateMachine
 @onready var hit_box: HitBox = $HitBox
-@onready var detection_box: Dectection_Box = $DetectionBox
+@onready var detection_box: Enemy_Dectection_Box = $DetectionBox
+
 
 signal enemy_destroyed(hurt_box:Area2D)
 signal enemy_damaged(hurt_box:Area2D)

@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://nn6kg5ssnlmf" path="res://Enemies/Scripts/enemy_state_attack.gd" id="11_5a2fv"]
 [ext_resource type="Script" uid="uid://c2poo6s4hu3gr" path="res://Enemies/Scripts/enemy_state_chase.gd" id="13_23xon"]
 [ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="13_bs83e"]
-[ext_resource type="PackedScene" uid="uid://cw8cd1pbyi2yy" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="15_el6yj"]
+[ext_resource type="PackedScene" uid="uid://cw8cd1pbyi2yy" path="res://GeneralNodes/DetectionBox/enemy_detection_box.tscn" id="15_el6yj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bmps"]
 atlas = ExtResource("2_7athc")
