@@ -8,7 +8,9 @@ func _ready():
 
 
 func Enter()->void:
+
 	pass
+	
 
 func Init()->void:
 	pass

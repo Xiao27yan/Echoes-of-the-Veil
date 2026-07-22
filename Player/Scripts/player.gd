@@ -8,6 +8,7 @@ var current_weapon = {
 	"damage":3
 }
 var hp:int =6
+var invulnerable:bool =false
 
 signal player_damaged
 signal player_destroyed
@@ -67,7 +68,18 @@ func AnimDirection()->String:
 	else:
 		return "side"
 		
+func make_invulnerable(invulnerable_duration:float=2.0)->void:
+	invulnerable = true
+	hit_box.monitoring = false	
+	await get_tree().create_timer(invulnerable_duration).timeout
+	invulnerable = false
+	hit_box.monitoring = true
+	pass
+		
 func TakeDamaged(hurt_box:HurtBox):
+	if invulnerable:
+		return
+	
 	hp -= hurt_box.damage
 		
 	if hp > 0:
@@ -92,7 +104,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		current_weapon.name  = 'hit'
 		current_weapon.attack_animation="attack_hit"
 		current_weapon.damage=1
-	OnweaponChanged()
-	
-func OnweaponChanged()->void:
 	hurt_box.damage  = current_weapon.damage
+	
+
+	
