@@ -1,11 +1,12 @@
 class_name Actor extends CharacterBody2D
+@onready var attack_component: AttackComponent = $AttackComponent
 
 @onready var detection_box: Area2D = $DetectionBox
 var target:CharacterBody2D = null
 var direction:Vector2 = Vector2.ZERO
 var cardinal_direction:Vector2 = Vector2.DOWN
 var DIR4 = [Vector2.DOWN,Vector2.UP,Vector2.LEFT,Vector2.RIGHT]
-var hp:int = 6
+
 
 enum Faction {
 	PLAYER,
@@ -13,12 +14,17 @@ enum Faction {
 	ENEMY,
 	NEUTRAL
 }
+@export var faction: Faction 
 
-@export var faction: Faction = Faction.ENEMY
-
+@export var hp:int = 6
 @export var knockback_speed:float = 400.0
 @export var decelerate_speed :float =10.0
 @export var move_speed:float = 50.0
+@export var attack_animations:Array[String] = [
+	"attack_01",
+	"attack_02",
+	"attack_03"
+]
 
 @onready var hurt_box: HurtBox = $HurtBox
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bp07yo8pi400m"]
 
 [ext_resource type="Script" uid="uid://bo7rep0ktg12g" path="res://GeneralNodes/SoldierSpawner/SoldierSpawner.gd" id="1_ll6ft"]
-[ext_resource type="PackedScene" uid="uid://m3deg8uph38n" path="res://Entities/Soldier/Soldier01.tscn" id="2_nd5q4"]
+[ext_resource type="PackedScene" uid="uid://m3deg8uph38n" path="res://Entities/Soldier/Soldier.tscn" id="2_nd5q4"]
 
 [node name="SoldierSpawner" type="Node2D" unique_id=1292699862]
 script = ExtResource("1_ll6ft")

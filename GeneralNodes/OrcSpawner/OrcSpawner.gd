@@ -2,7 +2,7 @@ class_name OrcUnitSpawner
 extends Node2D
 
 @export var unit_scene:PackedScene
-@export var spawn_count:int = 5
+@export var spawn_count:bool=true
 @export var spawn_interval:float = 1.0
 
 
@@ -13,7 +13,7 @@ func _ready():
 
 func spawn_units() -> void:
 
-	for i in range(spawn_count):
+	while(spawn_count):
 
 		Spawn()
 

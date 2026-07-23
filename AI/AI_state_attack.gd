@@ -11,8 +11,9 @@ var frame:int
 
 func Enter()->void:
 	attacking = true
-	actor.UpdateAnimation('attack')
-	
+	var anim = actor.attack_animations.pick_random()
+	actor.UpdateAnimation(anim)
+	actor.attack_component.Attack()
 	if not actor.sprite.animation_finished.is_connected(EndAttack):
 		actor.sprite.animation_finished.connect(EndAttack)
 	
@@ -21,6 +22,7 @@ func Process(_delta:float)->AI_State:
 	if frame>3 and frame <5 :
 		actor.hurt_box.monitoring = true
 	actor.velocity -= actor.decelerate_speed*_delta*actor.velocity
+	
 	if attacking == false:
 		if is_instance_valid(actor.target):
 			return chase

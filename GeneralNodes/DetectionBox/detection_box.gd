@@ -1,11 +1,11 @@
-class_name friend_Dectection_Box extends Area2D
-
+class_name Dectection_Box extends Area2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var actor:Actor = $".."
-
 @onready var chase: AI_State_Chase = $"../StateMachine/Chase"
+@export var detection_range: float = 100.0
 
 func _ready() -> void:
-	
+	_update_detection_range()
 	body_entered.connect(_on_detection_area_body_entered)
 	body_exited.connect(_on_detection_area_body_exited)
 	pass
@@ -19,7 +19,10 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_detection_area_body_entered(body):
-	if _is_valid_target(body):
+	if actor.target != null:
+		return
+	
+	if _is_valid_target(body) :
 		actor.target = body
 		actor.state_machine.ChangeState(chase)
 
@@ -45,3 +48,9 @@ func _is_valid_target(body)->bool:
 		return body.faction != actor.faction
 
 	return false
+	
+func _update_detection_range():
+
+	if collision_shape.shape is CircleShape2D:
+
+		collision_shape.shape.radius = detection_range

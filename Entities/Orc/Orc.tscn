@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bhqpd05di4bvh"]
+[gd_scene format=3 uid="uid://c7lt7112fl88o"]
 
 [ext_resource type="Script" uid="uid://dgn8hnhk2i3i7" path="res://AI/Actor.gd" id="1_23xon"]
 [ext_resource type="Texture2D" uid="uid://tfioqbydj0da" path="res://Entities/Orc/Attack/Orc_Attack02.png" id="2_7athc"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="13_bs83e"]
 [ext_resource type="Script" uid="uid://c2poo6s4hu3gr" path="res://AI/AI_state_chase.gd" id="13_vu8l3"]
 [ext_resource type="PackedScene" uid="uid://dfrasj4kry68f" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="16_23xon"]
+[ext_resource type="Script" uid="uid://dx4yqf656nw0d" path="res://AttackComponents/OrcComponent.gd" id="17_dcnth"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bmps"]
 atlas = ExtResource("2_7athc")
@@ -255,6 +256,8 @@ radius = 236.13556
 
 [node name="Orc" type="CharacterBody2D" unique_id=1110341561]
 script = ExtResource("1_23xon")
+faction = 2
+attack_animations = Array[String](["attack"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
 position = Vector2(0, -7)
@@ -298,7 +301,7 @@ shape = SubResource("CircleShape2D_u80os")
 debug_color = Color(0.7618527, 0.44888705, 0.1301704, 0.41960785)
 
 [node name="HurtBox" parent="." unique_id=1184801260 instance=ExtResource("13_bs83e")]
-collision_layer = 256
+collision_layer = 0
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1834469950]
@@ -311,3 +314,9 @@ debug_color = Color(0.89514464, 0.3030407, 0.27102074, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionBox" unique_id=339089392]
 shape = SubResource("CircleShape2D_yhoik")
 debug_color = Color(0.20371264, 0.63552153, 0.24681509, 0.41960785)
+
+[node name="CastPoint" type="Marker2D" parent="." unique_id=1453786389]
+position = Vector2(10, -14)
+
+[node name="AttackComponent" type="Node" parent="." unique_id=9992555]
+script = ExtResource("17_dcnth")

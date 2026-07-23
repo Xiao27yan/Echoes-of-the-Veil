@@ -1,8 +1,49 @@
 [gd_scene format=3 uid="uid://c1ydy2udfovhi"]
 
 [ext_resource type="Script" uid="uid://bo7rep0ktg12g" path="res://GeneralNodes/SoldierSpawner/SoldierSpawner.gd" id="1_uwlsu"]
-[ext_resource type="PackedScene" uid="uid://m3deg8uph38n" path="res://Entities/Soldier/Soldier01.tscn" id="2_kxd76"]
+[ext_resource type="PackedScene" uid="uid://m3deg8uph38n" path="res://Entities/Soldier/Soldier.tscn" id="2_kxd76"]
+[ext_resource type="Texture2D" uid="uid://b37lgmfw3qwtw" path="res://GeneralNodes/OrcSpawner/Stone_03-Sheet.png" id="3_3fckl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fckl"]
+atlas = ExtResource("3_3fckl")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pb30"]
+atlas = ExtResource("3_3fckl")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hi75"]
+atlas = ExtResource("3_3fckl")
+region = Rect2(0, 64, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h486h"]
+atlas = ExtResource("3_3fckl")
+region = Rect2(48, 64, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g40se"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fckl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pb30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hi75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h486h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="SoldierSpawner" type="Node2D" unique_id=1292699862]
 script = ExtResource("1_uwlsu")
 unit_scene = ExtResource("2_kxd76")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1417516387]
+sprite_frames = SubResource("SpriteFrames_g40se")
+frame_progress = 0.312473

@@ -1,5 +1,6 @@
 class_name AI_State_Chase extends AI_State
 
+@export var  striking_distance = 20
 @onready var attack: AI_State_Attack = $"../Attack"
 @onready var idle: AI_State_Idle = $"../Idle"
 
@@ -20,7 +21,7 @@ func Process(_delta:float)->AI_State:
 	actor.SetDirection()
 	actor.velocity = actor.direction *actor.move_speed
 	
-	if distance <20:
+	if distance <striking_distance:
 		return attack
 	
 	

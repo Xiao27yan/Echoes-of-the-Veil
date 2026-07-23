@@ -1,8 +1,51 @@
 [gd_scene format=3 uid="uid://d2focgev6uavh"]
 
 [ext_resource type="Script" uid="uid://kf5q3v72hstu" path="res://GeneralNodes/OrcSpawner/OrcSpawner.gd" id="1_nda7y"]
-[ext_resource type="PackedScene" uid="uid://bhqpd05di4bvh" path="res://Entities/Orc/Orc.tscn" id="2_vmvn2"]
+[ext_resource type="PackedScene" uid="uid://c7lt7112fl88o" path="res://Entities/Orc/Orc.tscn" id="2_vmvn2"]
+[ext_resource type="Texture2D" uid="uid://b37lgmfw3qwtw" path="res://GeneralNodes/OrcSpawner/Stone_03-Sheet.png" id="3_vmvn2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmvn2"]
+atlas = ExtResource("3_vmvn2")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck4l8"]
+atlas = ExtResource("3_vmvn2")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4c1n"]
+atlas = ExtResource("3_vmvn2")
+region = Rect2(0, 64, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amfuo"]
+atlas = ExtResource("3_vmvn2")
+region = Rect2(48, 64, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sp80r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmvn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck4l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4c1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amfuo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="OrcSpawner" type="Node2D" unique_id=1292699862]
 script = ExtResource("1_nda7y")
 unit_scene = ExtResource("2_vmvn2")
+
+[node name="AnimationSprite2D" type="AnimatedSprite2D" parent="." unique_id=284689677]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_sp80r")
+autoplay = "default"
+frame_progress = 0.60896
