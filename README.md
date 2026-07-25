@@ -1,5 +1,41 @@
 # SlowDays
 
+🟦 Ally 光明联盟
+
+├── Infantry
+│   ├── Soldier
+│   ├── Swordsman
+│   ├── Lancer
+│   ├── Knight
+│   ├── Knight Templar
+│   └── Armored Axeman
+│
+├── Ranged
+│   ├── Archer
+│   ├── Wizard
+│   └── Priest
+
+
+🟥 Enemy 黑暗军团
+
+├── Orc Tribe
+│   ├── Orc
+│   ├── Armored Orc
+│   ├── Elite Orc
+│   └── Orc Rider
+│
+├── Undead Legion
+│   ├── Skeleton
+│   ├── Armored Skeleton
+│   ├── Greatsword Skeleton
+│   ├── Skeleton Archer
+│   └── Necromancer
+│
+└── Monster
+    ├── Bat
+    ├── Slime
+    ├── Werewolf
+    └── Werebear
 版本日期：2026-07-23
 
 ## 项目新方向：慢日战纪

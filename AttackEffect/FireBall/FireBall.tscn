@@ -111,7 +111,6 @@ radius = 6.708204
 
 [node name="FireBall" type="CharacterBody2D" unique_id=659649150]
 script = ExtResource("1_lrol1")
-speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1050883649]
 sprite_frames = SubResource("SpriteFrames_60s5w")

@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 var direction: Vector2
 
-@export var speed := 250
+@export var speed := 500
 @export var life_time := 5.0
 
 

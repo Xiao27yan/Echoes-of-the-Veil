@@ -6,7 +6,7 @@ var target:CharacterBody2D = null
 var direction:Vector2 = Vector2.ZERO
 var cardinal_direction:Vector2 = Vector2.DOWN
 var DIR4 = [Vector2.DOWN,Vector2.UP,Vector2.LEFT,Vector2.RIGHT]
-
+var invulnerable:bool =false
 
 enum Faction {
 	PLAYER,
@@ -106,8 +106,18 @@ func UpdateAnimation(state:String)->void:
 func AnimDirection()->String:
 	return "side"
 
+func make_invulnerable(invulnerable_duration:float=2.0)->void:
+	invulnerable = true
+	hit_box.monitoring = false	
+	await get_tree().create_timer(invulnerable_duration).timeout
+	invulnerable = false
+	hit_box.monitoring = true
+	pass
 
 func TakeDamaged(hurt_box:HurtBox):
+	if invulnerable == true:
+		return
+	
 	hp -= hurt_box.damage
 		
 	if hp > 0:

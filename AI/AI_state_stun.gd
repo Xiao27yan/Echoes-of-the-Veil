@@ -19,6 +19,7 @@ func Enter()->void:
 	actor.velocity = actor.direction*actor.knockback_speed
 
 	actor.UpdateAnimation('stun')	
+	actor.make_invulnerable()
 	actor.sprite.animation_finished.connect(_on_animation_finished)
 	pass
 	

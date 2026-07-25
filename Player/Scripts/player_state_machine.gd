@@ -47,6 +47,6 @@ func ChangeState(new_state:State)->void:
 	prev_state = current_state
 	current_state = new_state
 	current_state.Enter()
-	print('player进入',new_state.name)
+	#print('player进入',new_state.name)
 
 	pass

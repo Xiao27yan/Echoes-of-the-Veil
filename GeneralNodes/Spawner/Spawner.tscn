@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://blwxqo8uslq3d"]
+
+[ext_resource type="Script" uid="uid://cjpi30mq7jwlf" path="res://GeneralNodes/Spawner/UnitSpawner.gd" id="1_6d3uo"]
+
+[node name="Spawner" type="Node2D" unique_id=1823765062]
+script = ExtResource("1_6d3uo")
+faction = 1

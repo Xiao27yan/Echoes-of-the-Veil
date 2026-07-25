@@ -32,7 +32,7 @@ func Initialize(actor:Actor)->void:
 			c.state_machine = self
 			states.append(c)
 			c.Init()
-	print(states)
+	
 	
 	if states.size() == 0:
 		return	
@@ -51,5 +51,5 @@ func ChangeState(new_state:AI_State)->void:
 	prev_state = current_state
 	current_state = new_state
 	current_state.Enter()
-	print('enemy进入',new_state.name)
+	#print('enemy进入',new_state.name)
 	pass

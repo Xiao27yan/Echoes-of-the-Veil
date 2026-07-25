@@ -21,6 +21,9 @@ func Process(_delta:float)->AI_State:
 	OnFrameChanged()
 	if frame>3 and frame <5 :
 		actor.hurt_box.monitoring = true
+	else:
+		actor.hurt_box.monitoring = false
+	
 	actor.velocity -= actor.decelerate_speed*_delta*actor.velocity
 	
 	if attacking == false:
