@@ -33,4 +33,7 @@ func Spawn(data:UnitSpawnData):
 
 	get_parent().add_child(unit)
 
-	unit.global_position = global_position
+	unit.global_position =global_position + Vector2(
+	randf_range(-50,50),
+	randf_range(-50,50)
+)

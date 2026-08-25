@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://doenu0vpipq8b"]
+
+[ext_resource type="Script" uid="uid://crj8un717ns2a" path="res://GeneralNodes/HealthBar/HealthBar.gd" id="1_2apdj"]
+
+[node name="HealthBar" type="Node2D" unique_id=385557861]
+
+[node name="Control" type="Control" parent="." unique_id=1922170804]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -20.0
+offset_right = 14.0
+offset_bottom = -15.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1281810655]
+modulate = Color(0.8745098, 0.078431375, 0.003921569, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+script = ExtResource("1_2apdj")

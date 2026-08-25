@@ -16,6 +16,7 @@ enum Faction {
 }
 @export var faction: Faction 
 
+@export var max_hp:int = 10
 @export var hp:int = 6
 @export var knockback_speed:float = 400.0
 @export var decelerate_speed :float =10.0
@@ -119,11 +120,11 @@ func TakeDamaged(hurt_box:HurtBox):
 		return
 	
 	hp -= hurt_box.damage
+	
 		
 	if hp > 0:
 		enemy_damaged.emit(hurt_box)
-		print(name)
-		print(hp)
+		
 	else:
 		enemy_destroyed.emit(hurt_box)
 	return

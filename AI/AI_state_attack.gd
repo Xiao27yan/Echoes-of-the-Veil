@@ -2,6 +2,9 @@ class_name AI_State_Attack extends AI_State
 var attacking:bool = false
 var frame:int
 
+@export var attack_start_frame:int
+@export var attack_end_frame:int
+
 @onready var chase: AI_State_Chase = $"../Chase"
 @onready var idle: AI_State_Idle = $"../Idle"
 @onready var run: AI_State_Run = $"../Run"
@@ -19,7 +22,7 @@ func Enter()->void:
 	
 func Process(_delta:float)->AI_State:
 	OnFrameChanged()
-	if frame>3 and frame <5 :
+	if frame>=attack_start_frame and frame <=attack_end_frame :
 		actor.hurt_box.monitoring = true
 	else:
 		actor.hurt_box.monitoring = false

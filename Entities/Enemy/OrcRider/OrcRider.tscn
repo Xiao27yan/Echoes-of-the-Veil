@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="16_pgx7r"]
 [ext_resource type="PackedScene" uid="uid://dfrasj4kry68f" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="17_qsx2v"]
 [ext_resource type="Script" uid="uid://dx4yqf656nw0d" path="res://AttackComponents/OrcComponent.gd" id="18_51b1l"]
+[ext_resource type="PackedScene" uid="uid://doenu0vpipq8b" path="res://GeneralNodes/HealthBar/HealthBar.tscn" id="19_c0q24"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kacml"]
 atlas = ExtResource("2_jh7ha")
@@ -342,13 +343,14 @@ script = ExtResource("1_abt3t")
 faction = 2
 hp = 9
 move_speed = 150.0
-attack_animations = Array[String](["attack_01", "attack_02"])
+attack_animations = Array[String](["attack_02"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_rykuy")
-animation = &"run_side"
-frame_progress = 0.22586614
+animation = &"attack_02_side"
+frame = 8
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4745363]
 position = Vector2(1, -1)
@@ -371,6 +373,8 @@ script = ExtResource("12_2edi1")
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=383719052]
 script = ExtResource("13_3gdgg")
+attack_start_frame = 3
+attack_end_frame = 6
 
 [node name="Chase" type="Node" parent="StateMachine" unique_id=506426489]
 script = ExtResource("14_epwx2")
@@ -406,3 +410,6 @@ position = Vector2(10, -14)
 
 [node name="AttackComponent" type="Node" parent="." unique_id=1604756709]
 script = ExtResource("18_51b1l")
+
+[node name="HealthBar" parent="." unique_id=385557861 instance=ExtResource("19_c0q24")]
+position = Vector2(0, -13)

@@ -474,7 +474,7 @@ script = ExtResource("1_4pve0")
 faction = 1
 hp = 10
 move_speed = 150.0
-attack_animations = Array[String](["attack_02"])
+attack_animations = Array[String](["attack_03"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
 position = Vector2(0, -7)
@@ -504,6 +504,8 @@ script = ExtResource("13_e7uq3")
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=383719052]
 script = ExtResource("14_pqu2i")
+attack_start_frame = 5
+attack_end_frame = 11
 
 [node name="Chase" type="Node" parent="StateMachine" unique_id=506426489]
 script = ExtResource("15_1j34i")
