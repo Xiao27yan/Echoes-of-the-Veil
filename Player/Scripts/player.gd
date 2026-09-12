@@ -1,5 +1,6 @@
 class_name Player extends CharacterBody2D
 
+var max_hp:int =20
 var direction:Vector2 = Vector2.ZERO
 var cardinal_direction:Vector2 = Vector2.DOWN
 var current_weapon = {
@@ -34,6 +35,7 @@ func _ready() -> void:
 	hurt_box.monitoring  =  false
 	hit_box.Damaged.connect(TakeDamaged)
 	state_machine.Initialize(self)
+	update_hp(99)
 	pass 
 
 func _process(delta: float) -> void:
@@ -88,7 +90,8 @@ func TakeDamaged(hurt_box:HurtBox):
 	if invulnerable:
 		return
 	
-	hp -= hurt_box.damage
+	
+	update_hp(-hurt_box.damage)
 		
 	if hp > 0:
 		player_damaged.emit(hurt_box)
@@ -96,6 +99,7 @@ func TakeDamaged(hurt_box:HurtBox):
 		print(hp)
 	else:
 		player_destroyed.emit()
+		update_hp(99)
 	return
 		
 func _unhandled_input(_event: InputEvent) -> void:
@@ -114,5 +118,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 		current_weapon.damage=1
 	hurt_box.damage  = current_weapon.damage
 	
-
+func update_hp(delta:int)->void:
+	hp = clampi(hp +delta,0,max_hp)
+	PlayerHud.update_hp(hp,max_hp)
+	pass
 	

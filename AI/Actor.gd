@@ -7,15 +7,16 @@ var direction:Vector2 = Vector2.ZERO
 var cardinal_direction:Vector2 = Vector2.DOWN
 var DIR4 = [Vector2.DOWN,Vector2.UP,Vector2.LEFT,Vector2.RIGHT]
 var invulnerable:bool =false
-
+var attack_timer: float = 0.0
 enum Faction {
 	PLAYER,
 	ALLY,
 	ENEMY,
 	NEUTRAL
 }
-@export var faction: Faction 
 
+@export var faction: Faction 
+@export var attack_interval: float = 0.5
 @export var max_hp:int = 10
 @export var hp:int = 6
 @export var knockback_speed:float = 400.0
@@ -53,6 +54,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	hurt_box.UpdateHurtBoxDirection()
+	
+	if attack_timer>=0:
+		attack_timer-=delta
 	pass
 
 

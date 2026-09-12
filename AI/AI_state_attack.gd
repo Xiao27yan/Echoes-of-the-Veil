@@ -1,4 +1,5 @@
 class_name AI_State_Attack extends AI_State
+
 var attacking:bool = false
 var frame:int
 
@@ -11,17 +12,21 @@ var frame:int
 
 
 
-
 func Enter()->void:
 	attacking = true
 	var anim = actor.attack_animations.pick_random()
 	actor.UpdateAnimation(anim)
 	actor.attack_component.Attack()
+	
 	if not actor.sprite.animation_finished.is_connected(EndAttack):
 		actor.sprite.animation_finished.connect(EndAttack)
 	
 func Process(_delta:float)->AI_State:
-	OnFrameChanged()
+
+	
+#	每秒都在监听帧
+	OnFrameChanged()	
+
 	if frame>=attack_start_frame and frame <=attack_end_frame :
 		actor.hurt_box.monitoring = true
 	else:
@@ -36,13 +41,14 @@ func Process(_delta:float)->AI_State:
 			return idle
 		else:
 			return run
-	return null
+	return self
 	
 
 
 func EndAttack()->void:
 	attacking  =  false
 	actor.hurt_box.monitoring = false
+	actor.attack_timer=actor.attack_interval
 	
 func OnFrameChanged() -> void:
 	frame = actor.sprite.frame

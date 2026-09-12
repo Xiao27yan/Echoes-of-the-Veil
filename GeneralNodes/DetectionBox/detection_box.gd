@@ -80,7 +80,7 @@ func _find_closest_target() -> CharacterBody2D:
 
 # 判断目标是否合法
 func _is_valid_target(body)->bool:
-	if body is Actor:
+	if body is Actor or Player:
 
 		return body.faction != actor.faction
 	return false

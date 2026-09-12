@@ -272,7 +272,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_82jer")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack_01_side",
 "speed": 12.0
 }, {
@@ -363,7 +363,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2m1km")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack_03_side",
 "speed": 12.0
 }, {
@@ -480,8 +480,8 @@ attack_animations = Array[String](["attack_03"])
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_rykuy")
 animation = &"attack_03_side"
-frame = 11
-frame_progress = 1.0
+frame = 4
+frame_progress = 0.4184102
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4745363]
 position = Vector2(1, -1)

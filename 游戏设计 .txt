@@ -1,0 +1,40 @@
+Ally 光明联盟
+Infantry（近战）
+单位	HP	伤害	攻击间隔	定位
+Soldier	120	15	1.0s	基础步兵
+Swordsman	160	22	1.0s	高输出近战
+Lancer	140	28	1.3s	单体爆发
+Knight	300	35	1.2s	重装坦克
+Knight Templar	380	45	1.2s	精英骑士
+Armored Axeman	260	55	1.5s	慢速高伤
+Ranged（远程）
+单位	HP	伤害	攻击间隔	定位
+Archer	90	25	1.2s	单体远程
+Wizard	100	50	2.0s	高爆发
+Priest	130	10	1.5s	辅助治疗
+
+
+Enemy 黑暗军团
+Orc Tribe
+兽人
+单位	HP	伤害	攻击间隔	定位
+Orc	180	25	1.0s	普通战士
+Armored Orc	350	35	1.2s	肉盾
+Elite Orc	500	65	1.5s	精英
+Orc Rider	450	80	1.2s	高机动输出  
+
+
+Undead Legion不死族
+单位	HP	伤害	攻击间隔	定位
+Skeleton	80	18	1.0s	炮灰
+Armored Skeleton	220	30	1.2s	前排
+Greatsword Skeleton	280	70	1.8s	重击
+Skeleton Archer	100	30	1.2s	远程
+Necromancer	180	40	2.0s	法师
+
+Monster（野兽）
+单位	HP	伤害	攻击间隔	定位
+Bat	60	12	0.8s	高速度
+Slime	150	20	1.3s	均衡
+Werewolf	400	75	1.0s	精英
+Werebear	800	120	2.0s	Boss级

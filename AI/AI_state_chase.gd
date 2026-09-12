@@ -21,8 +21,8 @@ func Process(_delta:float)->AI_State:
 	actor.SetDirection()
 	actor.velocity = actor.direction *actor.move_speed
 	
-	if distance <striking_distance:
+	if distance <striking_distance and actor.attack_timer<=0:
 		return attack
 	
 	
-	return null
+	return self
