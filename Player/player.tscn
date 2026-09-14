@@ -1215,7 +1215,7 @@ faction = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019363973]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_6pogt")
-animation = &"attack_slice_down"
+animation = &"attack_hit_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701818206]
 shape = SubResource("CircleShape2D_fhl08")
@@ -1239,7 +1239,7 @@ script = ExtResource("24_8viyr")
 script = ExtResource("28_755ss")
 
 [node name="HitBox" parent="." unique_id=1050192186 instance=ExtResource("18_b1ygp")]
-collision_layer = 3
+collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=901939852]

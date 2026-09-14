@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="SlowDays"
+config/name="Twilight Echoes"
 run/main_scene="uid://mbvubxejlw60"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://bf5mwaqfn8n66"
 
 [autoload]
 

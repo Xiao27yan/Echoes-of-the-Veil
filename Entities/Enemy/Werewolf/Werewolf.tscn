@@ -374,6 +374,7 @@ radius = 39.623226
 radius = 236.13556
 
 [node name="Werewolf" type="CharacterBody2D" unique_id=1110341561]
+collision_layer = 256
 script = ExtResource("1_nn1jm")
 faction = 2
 hp = 9
@@ -383,7 +384,9 @@ attack_animations = Array[String](["attack_02"])
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_rykuy")
-animation = &"attack_02_side"
+animation = &"death_side"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4745363]
 position = Vector2(1, -1)

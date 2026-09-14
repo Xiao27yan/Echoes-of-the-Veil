@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="17_0q08s"]
 [ext_resource type="PackedScene" uid="uid://dfrasj4kry68f" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="18_qxpcf"]
 [ext_resource type="Script" uid="uid://dx4yqf656nw0d" path="res://AttackComponents/OrcComponent.gd" id="19_dpisv"]
+[ext_resource type="PackedScene" uid="uid://doenu0vpipq8b" path="res://GeneralNodes/HealthBar/HealthBar.tscn" id="20_ljhtc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q35sp"]
 atlas = ExtResource("2_c4b05")
@@ -272,7 +273,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_82jer")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_01_side",
 "speed": 12.0
 }, {
@@ -363,7 +364,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2m1km")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_03_side",
 "speed": 12.0
 }, {
@@ -470,6 +471,7 @@ radius = 42.0119
 radius = 236.13556
 
 [node name="Swordsman" type="CharacterBody2D" unique_id=1110341561]
+collision_mask = 256
 script = ExtResource("1_4pve0")
 faction = 1
 hp = 10
@@ -479,9 +481,7 @@ attack_animations = Array[String](["attack_03"])
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_rykuy")
-animation = &"attack_03_side"
-frame = 4
-frame_progress = 0.4184102
+animation = &"attack_02_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4745363]
 position = Vector2(1, -1)
@@ -533,6 +533,7 @@ debug_color = Color(0.89514464, 0.3030407, 0.27102074, 0.41960785)
 
 [node name="DetectionBox" parent="." unique_id=2006781143 instance=ExtResource("18_qxpcf")]
 visible = false
+visibility_layer = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionBox" unique_id=247295212]
 shape = SubResource("CircleShape2D_0dr7y")
@@ -543,3 +544,5 @@ position = Vector2(10, -14)
 
 [node name="AttackComponent" type="Node" parent="." unique_id=34698320]
 script = ExtResource("19_dpisv")
+
+[node name="HealthBar" parent="." unique_id=385557861 instance=ExtResource("20_ljhtc")]

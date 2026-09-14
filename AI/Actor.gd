@@ -15,8 +15,9 @@ enum Faction {
 	NEUTRAL
 }
 
+@export var striking_distance = 20
 @export var faction: Faction 
-@export var attack_interval: float = 0.5
+@export var attack_interval: float = 3
 @export var max_hp:int = 10
 @export var hp:int = 6
 @export var knockback_speed:float = 400.0
@@ -55,7 +56,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	hurt_box.UpdateHurtBoxDirection()
 	
-	if attack_timer>=0:
+	if attack_timer>0:
 		attack_timer-=delta
 	pass
 

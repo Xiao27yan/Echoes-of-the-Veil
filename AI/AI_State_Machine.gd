@@ -51,5 +51,5 @@ func ChangeState(new_state:AI_State)->void:
 	prev_state = current_state
 	current_state = new_state
 	current_state.Enter()
-	#print('enemy进入',new_state.name)
+	print('进入',new_state.name)
 	pass

@@ -256,6 +256,7 @@ radius = 11.0
 radius = 236.13556
 
 [node name="Orc" type="CharacterBody2D" unique_id=1110341561]
+collision_layer = 256
 script = ExtResource("1_23xon")
 faction = 2
 attack_animations = Array[String](["attack"])
