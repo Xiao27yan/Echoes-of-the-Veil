@@ -2,6 +2,8 @@ class_name Actor extends CharacterBody2D
 @onready var attack_component: AttackComponent = $AttackComponent
 
 @onready var detection_box: Area2D = $DetectionBox
+
+var cool_down:bool =false
 var target:CharacterBody2D = null
 var direction:Vector2 = Vector2.ZERO
 var cardinal_direction:Vector2 = Vector2.DOWN
@@ -57,7 +59,10 @@ func _process(delta: float) -> void:
 	hurt_box.UpdateHurtBoxDirection()
 	
 	if attack_timer>0:
+		cool_down=true
 		attack_timer-=delta
+	else:
+		cool_down=false
 	pass
 
 
@@ -112,7 +117,7 @@ func UpdateAnimation(state:String)->void:
 func AnimDirection()->String:
 	return "side"
 
-func make_invulnerable(invulnerable_duration:float=2.0)->void:
+func make_invulnerable(invulnerable_duration:float=0.5)->void:
 	invulnerable = true
 	hit_box.monitoring = false	
 	await get_tree().create_timer(invulnerable_duration).timeout

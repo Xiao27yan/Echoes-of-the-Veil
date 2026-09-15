@@ -25,7 +25,7 @@ func Process(_delta:float)->AI_State:
 		actor.velocity -= actor.decelerate_speed*_delta*actor.velocity
 		actor.UpdateAnimation('idle')
 	
-	if distance <=actor.striking_distance and actor.attack_timer<=0:
+	if distance <=actor.striking_distance and actor.cool_down==false:
 		return attack
 	
 	

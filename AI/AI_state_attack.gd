@@ -14,6 +14,7 @@ var frame:int
 
 func Enter()->void:
 	attacking = true
+	actor.cool_down=true
 	var anim = actor.attack_animations.pick_random()
 	actor.UpdateAnimation(anim)
 	actor.attack_component.Attack()

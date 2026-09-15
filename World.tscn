@@ -10758,7 +10758,7 @@ z_index = 8
 position = Vector2(620, 351)
 
 [node name="Wizard" parent="Entities" unique_id=1110341561 instance=ExtResource("11_ydbc3")]
-position = Vector2(185, 307)
+position = Vector2(225, 344)
 
 [node name="Room" type="Node2D" parent="." unique_id=1477195848]
 position = Vector2(-1179, -148)

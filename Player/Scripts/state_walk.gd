@@ -1,6 +1,6 @@
 class_name State_Walk extends State
 
-@export var move_speed:float =200.0
+
 @export var run_speed:float	 = 400.0
 
 @onready var idle:State_Idle = $"../Idle"
@@ -20,13 +20,16 @@ func Process(_delta:float)->State:
 		if player.SetDirection():
 			player.UpdateAnimation("run")
 	else:
-		player.velocity = player.direction * move_speed
+		player.velocity = player.direction * player.move_speed
 		if player.SetDirection():
 			player.UpdateAnimation("walk")
 	
 	return null
 
 func HandleInput(_event:InputEvent)->State:
+	
+	print("收到输入：", _event)
+
 	if _event.is_action_pressed("attack"):
 		return attack
 		

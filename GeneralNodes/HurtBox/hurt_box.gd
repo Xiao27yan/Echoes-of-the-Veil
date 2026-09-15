@@ -1,6 +1,6 @@
 class_name HurtBox extends Area2D
 
-@export var damage:int =1
+@export var damage:float =1.0
 @onready var attacker
 @onready var hurt_box_shape: CollisionShape2D = $CollisionShape2D
 
