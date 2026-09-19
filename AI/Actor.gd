@@ -22,7 +22,7 @@ enum Faction {
 @export var attack_interval: float = 3
 @export var max_hp:int = 10
 @export var hp:int = 6
-@export var knockback_speed:float = 400.0
+@export var knockback_speed:float = 200.0
 @export var decelerate_speed :float =10.0
 @export var move_speed:float = 50.0
 @export var attack_animations:Array[String] = [
@@ -117,7 +117,7 @@ func UpdateAnimation(state:String)->void:
 func AnimDirection()->String:
 	return "side"
 
-func make_invulnerable(invulnerable_duration:float=0.5)->void:
+func make_invulnerable(invulnerable_duration:float=0.05)->void:
 	invulnerable = true
 	hit_box.monitoring = false	
 	await get_tree().create_timer(invulnerable_duration).timeout

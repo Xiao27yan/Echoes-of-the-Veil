@@ -314,8 +314,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wumx7"]
-radius = 15.132746
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ah0fk"]
+radius = 2.9995975
+height = 31.995705
 
 [node name="Iceball" type="CharacterBody2D" unique_id=941613918]
 script = ExtResource("1_rk2kb")
@@ -333,8 +334,9 @@ collision_mask = 256
 damage = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=2144448810]
-position = Vector2(-12, 2)
-shape = SubResource("CircleShape2D_wumx7")
+position = Vector2(-10, 1)
+rotation = 1.5871779
+shape = SubResource("CapsuleShape2D_ah0fk")
 debug_color = Color(0.92397565, 0.27507713, 0.03605051, 0.41960785)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1081522900]

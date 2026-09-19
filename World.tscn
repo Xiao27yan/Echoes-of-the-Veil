@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://mbvubxejlw60"]
 
+[ext_resource type="Script" uid="uid://74j0ne2h5my1" path="res://GeneralNodes/World/world.gd" id="1_d7dfr"]
 [ext_resource type="Texture2D" uid="uid://dh4oppvnk8lma" path="res://TileMaps/Sprites/Floors/Floors_Tiles.png" id="1_js7pq"]
 [ext_resource type="Script" uid="uid://c66l3xsfd8qj7" path="res://TileMaps/LevelTileMap.gd" id="2_6w02q"]
 [ext_resource type="Texture2D" uid="uid://gva1skx85hrh" path="res://TileMaps/Sprites/Trees/Model_01/Size_02.png" id="2_eu7l1"]
@@ -11,14 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://b80cq0pkvi2wi" path="res://TileMaps/Sprites/Trees/Model_01/Size_03.png" id="5_fv4w7"]
 [ext_resource type="Texture2D" uid="uid://dm0aaivo5l0k2" path="res://TileMaps/Sprites/Water/Water_tiles.png" id="6_fvag4"]
 [ext_resource type="Texture2D" uid="uid://dffpvqkbas25n" path="res://TileMaps/Sprites/Vegetation/Vegetation.png" id="6_kva58"]
-[ext_resource type="PackedScene" uid="uid://c1ck2glw70fql" path="res://Entities/Ally/Swordsman/Swordsman.tscn" id="11_aj1ai"]
+[ext_resource type="PackedScene" uid="uid://c1ck2glw70fql" path="res://Entities/Ally/ArmoredAxeman/ArmoredAxeman.tscn" id="11_aj1ai"]
 [ext_resource type="Texture2D" uid="uid://cu31rvvqspu4b" path="res://TileMaps/Sprites/Buildings/Props.png" id="11_gn8l5"]
 [ext_resource type="PackedScene" uid="uid://08hw2kkxncr4" path="res://Entities/Ally/Wizard/Wizard.tscn" id="11_ydbc3"]
 [ext_resource type="Texture2D" uid="uid://dg5k6jxrk2uiv" path="res://TileMaps/Sprites/Buildings/Resources.png" id="12_6w02q"]
+[ext_resource type="PackedScene" uid="uid://bxpo8vddtxdf2" path="res://Entities/Enemy/OrcRider/OrcRider.tscn" id="12_aj1ai"]
 [ext_resource type="PackedScene" uid="uid://b5s17xr6tvij2" path="res://Entities/Enemy/Werewolf/Werewolf.tscn" id="12_jyqkj"]
 [ext_resource type="Texture2D" uid="uid://cmeobxgkt26rw" path="res://TileMaps/Sprites/Buildings/Roofs.png" id="13_1fphk"]
 [ext_resource type="Texture2D" uid="uid://cik8j5q3y41ee" path="res://TileMaps/Sprites/Buildings/Interior_Walls_01.png" id="14_sjtuv"]
 [ext_resource type="Texture2D" uid="uid://cyp5jxndh22iu" path="res://TileMaps/Sprites/Buildings/Furniture.png" id="15_cvq6i"]
+[ext_resource type="PackedScene" uid="uid://qfhxiu1l15ji" path="res://Entities/Ally/Swordsman/Swordsman.tscn" id="16_c2gv2"]
+[ext_resource type="PackedScene" uid="uid://w7bjvkt7c61d" path="res://Entities/Enemy/Werebear/Werebear.tscn" id="17_rp4qs"]
 [ext_resource type="Texture2D" uid="uid://cjwk8f486oj10" path="res://TileMaps/Walls/Wall_Variations.png" id="18_6tx0c"]
 [ext_resource type="Texture2D" uid="uid://b3c433s71laj4" path="res://TileMaps/Sprites/Buildings/TX Props.png" id="20_5j71u"]
 [ext_resource type="PackedScene" uid="uid://blwxqo8uslq3d" path="res://GeneralNodes/Spawner/Spawner.tscn" id="20_6tx0c"]
@@ -10724,6 +10728,7 @@ amount = 0
 metadata/_custom_type_script = "uid://cwohhrm3uhrm"
 
 [node name="World" type="Node2D" unique_id=1703937416]
+script = ExtResource("1_d7dfr")
 
 [node name="Ground" type="Node2D" parent="." unique_id=1852829379]
 position = Vector2(-3, -3)
@@ -10759,6 +10764,21 @@ position = Vector2(620, 351)
 
 [node name="Wizard" parent="Entities" unique_id=1110341561 instance=ExtResource("11_ydbc3")]
 position = Vector2(225, 344)
+
+[node name="OrcRider" parent="Entities" unique_id=2077131920 instance=ExtResource("12_aj1ai")]
+position = Vector2(606, 215)
+
+[node name="Soldier" parent="Entities" unique_id=406695801 instance=ExtResource("21_jyqkj")]
+position = Vector2(184, 246)
+
+[node name="ArmoredAxeman" parent="Entities" unique_id=332757872 instance=ExtResource("11_aj1ai")]
+position = Vector2(290, 88)
+
+[node name="Swordsman" parent="Entities" unique_id=1850366280 instance=ExtResource("16_c2gv2")]
+position = Vector2(94, 73)
+
+[node name="Werebear" parent="Entities" unique_id=701278752 instance=ExtResource("17_rp4qs")]
+position = Vector2(419, 177)
 
 [node name="Room" type="Node2D" parent="." unique_id=1477195848]
 position = Vector2(-1179, -148)

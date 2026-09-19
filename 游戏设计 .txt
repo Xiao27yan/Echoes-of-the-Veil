@@ -1,40 +1,34 @@
-Ally 光明联盟
-Infantry（近战）
-单位	HP	伤害	攻击间隔	定位
-Soldier	120	15	1.0s	基础步兵
-Swordsman	160	22	1.0s	高输出近战
-Lancer	140	28	1.3s	单体爆发
-Knight	300	35	1.2s	重装坦克
-Knight Templar	380	45	1.2s	精英骑士
-Armored Axeman	260	55	1.5s	慢速高伤
-Ranged（远程）
-单位	HP	伤害	攻击间隔	定位
-Archer	90	25	1.2s	单体远程
-Wizard	100	50	2.0s	高爆发
-Priest	130	10	1.5s	辅助治疗
-
-
-Enemy 黑暗军团
-Orc Tribe
-兽人
-单位	HP	伤害	攻击间隔	定位
-Orc	180	25	1.0s	普通战士
-Armored Orc	350	35	1.2s	肉盾
-Elite Orc	500	65	1.5s	精英
-Orc Rider	450	80	1.2s	高机动输出  
-
-
-Undead Legion不死族
-单位	HP	伤害	攻击间隔	定位
-Skeleton	80	18	1.0s	炮灰
-Armored Skeleton	220	30	1.2s	前排
-Greatsword Skeleton	280	70	1.8s	重击
-Skeleton Archer	100	30	1.2s	远程
-Necromancer	180	40	2.0s	法师
-
-Monster（野兽）
-单位	HP	伤害	攻击间隔	定位
-Bat	60	12	0.8s	高速度
-Slime	150	20	1.3s	均衡
-Werewolf	400	75	1.0s	精英
-Werebear	800	120	2.0s	Boss级
+🟦 Ally 光明联盟
+Infantry 近战
+单位	职业	HP	伤害	攻击间隔	移速	攻击距离	定位
+Soldier	⚔️ 战士	120	15	1.0s	55	25	基础步兵
+Swordsman	⚔️ 战士	160	22	1.0s	55	25	高输出近战
+Lancer	🗡️ 刺客	140	28	1.3s	75	30	高机动爆发
+Knight	🛡️ 肉坦	300	35	1.2s	40	25	重装坦克
+Knight Templar	🛡️ 肉坦	380	45	1.2s	38	28	精英骑士
+Armored Axeman	⚔️ 战士	260	55	1.5s	35	28	慢速重击
+Ranged 远程
+单位	职业	HP	伤害	攻击间隔	移速	攻击距离	定位
+Archer	🏹 射手	90	25	1.2s	50	300	单体远程
+Wizard	🔮 法师	100	50	2.0s	40	350	高爆发法术
+Priest	✨ 辅助	130	10	1.5s	40	250	治疗辅助
+🟥 Enemy 黑暗军团
+Orc Tribe 兽人
+单位	职业	HP	伤害	攻击间隔	移速	攻击距离	定位
+Orc	⚔️ 战士	180	25	1.0s	50	25	普通战士
+Armored Orc	🛡️ 肉坦	350	35	1.2s	35	25	重型前排
+Elite Orc	⚔️ 战士	500	65	1.5s	45	28	精英输出
+Orc Rider	🗡️ 刺客	450	80	1.2s	85	30	高机动突袭
+☠️ Undead Legion 不死族
+单位	职业	HP	伤害	攻击间隔	移速	攻击距离	定位
+Skeleton	⚔️ 战士	80	18	1.0s	55	25	炮灰
+Armored Skeleton	🛡️ 肉坦	220	30	1.2s	35	25	前排
+Greatsword Skeleton	⚔️ 战士	280	70	1.8s	35	30	重击
+Skeleton Archer	🏹 射手	100	30	1.2s	45	300	远程输出
+Necromancer	🔮 法师	180	40	2.0s	35	350	召唤/法术
+🐺 Monster 野兽
+单位	职业	HP	伤害	攻击间隔	移速	攻击距离	定位
+Bat	🗡️ 刺客	60	12	0.8s	100	20	高速骚扰
+Slime	⚔️ 战士	150	20	1.3s	40	25	均衡
+Werewolf	🗡️ 刺客	400	75	1.0s	90	30	精英突袭
+Werebear	👑 Boss / 🛡️ 肉坦	800	120	2.0s	30	40	Boss级

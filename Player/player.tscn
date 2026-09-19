@@ -686,7 +686,7 @@ animations = [{
 "speed": 12.0
 }, {
 "frames": [{
-"duration": 0.3,
+"duration": 0.01,
 "texture": SubResource("AtlasTexture_wvbyc")
 }, {
 "duration": 0.3,
@@ -724,7 +724,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_hit_side",
-"speed": 20.0
+"speed": 100.0
 }, {
 "frames": [{
 "duration": 0.1,
@@ -1285,7 +1285,9 @@ faction = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019363973]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_6pogt")
-animation = &"run_side"
+animation = &"attack_hit_side"
+frame = 11
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701818206]
 shape = SubResource("CircleShape2D_fhl08")

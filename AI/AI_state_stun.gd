@@ -20,7 +20,8 @@ func Enter()->void:
 
 	actor.UpdateAnimation('stun')	
 	actor.make_invulnerable()
-	actor.sprite.animation_finished.connect(_on_animation_finished)
+	if not actor.sprite.animation_finished.is_connected(_on_animation_finished):
+		actor.sprite.animation_finished.connect(_on_animation_finished)
 	pass
 	
 func Process(_delta:float)->AI_State:
