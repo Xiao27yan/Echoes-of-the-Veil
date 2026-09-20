@@ -313,7 +313,7 @@ shape = SubResource("CircleShape2D_7athc")
 debug_color = Color(0.89514464, 0.3030407, 0.27102074, 0.41960785)
 
 [node name="DetectionBox" parent="." unique_id=2006781143 instance=ExtResource("16_23xon")]
-collision_layer = 7
+collision_layer = 0
 detection_range = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionBox" unique_id=339089392]

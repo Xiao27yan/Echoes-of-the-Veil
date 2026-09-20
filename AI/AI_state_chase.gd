@@ -16,9 +16,10 @@ func Process(_delta:float)->AI_State:
 		return idle
 	
 	var distance = actor.global_position.distance_to(actor.target.global_position)
+	actor.direction = actor.global_position.direction_to(actor.target.global_position)
+	actor.SetDirection()
+#	未达到攻击距离就靠近
 	if actor.striking_distance<distance:
-		actor.direction = actor.global_position.direction_to(actor.target.global_position)
-		actor.SetDirection()
 		actor.velocity = actor.direction *actor.move_speed
 	else:
 #		达到攻击距离时候就等候cd

@@ -403,6 +403,7 @@ debug_color = Color(0.89514464, 0.3030407, 0.27102074, 0.41960785)
 
 [node name="DetectionBox" parent="." unique_id=2006781143 instance=ExtResource("17_qsx2v")]
 visible = false
+collision_layer = 0
 detection_range = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionBox" unique_id=247295212]

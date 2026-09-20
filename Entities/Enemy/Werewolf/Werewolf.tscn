@@ -312,7 +312,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_side",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -384,9 +384,8 @@ attack_animations = Array[String](["attack_02"])
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_rykuy")
-animation = &"death_side"
-frame = 3
-frame_progress = 1.0
+animation = &"idle_side"
+frame_progress = 0.5768922
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4745363]
 position = Vector2(1, -1)
@@ -435,6 +434,8 @@ shape = SubResource("CircleShape2D_7athc")
 debug_color = Color(0.89514464, 0.3030407, 0.27102074, 0.41960785)
 
 [node name="DetectionBox" parent="." unique_id=2006781143 instance=ExtResource("17_goqkb")]
+collision_layer = 0
+collision_mask = 256
 detection_range = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionBox" unique_id=247295212]

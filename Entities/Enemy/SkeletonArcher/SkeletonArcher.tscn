@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxutnlf20npda" path="res://Entities/Enemy/SkeletonArcher/Attack/Skeleton Archer_Attack.png" id="2_4fef1"]
 [ext_resource type="Texture2D" uid="uid://dcba5wqv1js8r" path="res://Entities/Enemy/SkeletonArcher/Death/Skeleton Archer_Death.png" id="3_r1o3i"]
 [ext_resource type="Texture2D" uid="uid://c53w7ep3sam8k" path="res://Entities/Enemy/SkeletonArcher/Walk/Skeleton Archer_Walk.png" id="4_4mhhj"]
+[ext_resource type="Texture2D" uid="uid://ibonx2iharh7" path="res://Entities/Enemy/SkeletonArcher/Idle/Skeleton Archer_Idle.png" id="4_r1o3i"]
 [ext_resource type="Texture2D" uid="uid://x72cib7uht1x" path="res://Entities/Enemy/SkeletonArcher/Stun/Skeleton Archer_Hurt.png" id="5_w400x"]
 [ext_resource type="Script" uid="uid://bw5ikgqqtn6bs" path="res://AI/AI_State_Machine.gd" id="6_wadbr"]
 [ext_resource type="Script" uid="uid://jhqjcwu7va5w" path="res://AI/AI_state_idle.gd" id="7_dbugk"]
@@ -15,7 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cahchd2omtq51" path="res://GeneralNodes/HitBox/hit_box.tscn" id="13_r343f"]
 [ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="14_1ejvc"]
 [ext_resource type="PackedScene" uid="uid://dfrasj4kry68f" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="15_m8t1u"]
-[ext_resource type="Script" uid="uid://dx4yqf656nw0d" path="res://AttackComponents/OrcComponent.gd" id="16_1x5ax"]
+[ext_resource type="Script" uid="uid://cpdo4dlmmf5fb" path="res://AttackComponents/SkeletonArcher.gd" id="16_idwao"]
+[ext_resource type="PackedScene" uid="uid://c4h0l16kpt5ve" path="res://AttackEffect/Arrow/Arrow.tscn" id="17_4fef1"]
 [ext_resource type="PackedScene" uid="uid://doenu0vpipq8b" path="res://GeneralNodes/HealthBar/HealthBar.tscn" id="17_cnsra"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1awoq"]
@@ -106,21 +108,29 @@ region = Rect2(200, 0, 100, 100)
 atlas = ExtResource("3_r1o3i")
 region = Rect2(300, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5d0pc"]
-atlas = ExtResource("3_r1o3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mhhj"]
+atlas = ExtResource("4_r1o3i")
 region = Rect2(0, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ciaah"]
-atlas = ExtResource("3_r1o3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w400x"]
+atlas = ExtResource("4_r1o3i")
 region = Rect2(100, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lvkxi"]
-atlas = ExtResource("3_r1o3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wadbr"]
+atlas = ExtResource("4_r1o3i")
 region = Rect2(200, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dcf2"]
-atlas = ExtResource("3_r1o3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbugk"]
+atlas = ExtResource("4_r1o3i")
 region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7q2w"]
+atlas = ExtResource("4_r1o3i")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sup38"]
+atlas = ExtResource("4_r1o3i")
+region = Rect2(500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pnud"]
 atlas = ExtResource("4_4mhhj")
@@ -255,18 +265,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5d0pc")
+"texture": SubResource("AtlasTexture_4mhhj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ciaah")
+"texture": SubResource("AtlasTexture_w400x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lvkxi")
+"texture": SubResource("AtlasTexture_wadbr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7dcf2")
+"texture": SubResource("AtlasTexture_dbugk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7q2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sup38")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle_side",
 "speed": 5.0
 }, {
@@ -343,8 +359,7 @@ attack_animations = Array[String](["attack_02"])
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_rykuy")
 animation = &"attack_01_side"
-frame = 8
-frame_progress = 1.0
+autoplay = "idle_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4745363]
 position = Vector2(1, -1)
@@ -385,7 +400,6 @@ debug_color = Color(0.7618527, 0.44888705, 0.1301704, 0.41960785)
 [node name="HurtBox" parent="." unique_id=1184801260 instance=ExtResource("14_1ejvc")]
 collision_layer = 0
 collision_mask = 6
-damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1834469950]
 position = Vector2(-2, 31)
@@ -393,6 +407,7 @@ shape = SubResource("CircleShape2D_7athc")
 debug_color = Color(0.89514464, 0.3030407, 0.27102074, 0.41960785)
 
 [node name="DetectionBox" parent="." unique_id=2006781143 instance=ExtResource("15_m8t1u")]
+collision_layer = 0
 detection_range = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionBox" unique_id=247295212]
@@ -403,6 +418,7 @@ debug_color = Color(0.20371264, 0.63552153, 0.24681509, 0.41960785)
 position = Vector2(10, -14)
 
 [node name="AttackComponent" type="Node" parent="." unique_id=1604756709]
-script = ExtResource("16_1x5ax")
+script = ExtResource("16_idwao")
+effect = ExtResource("17_4fef1")
 
 [node name="HealthBar" parent="." unique_id=385557861 instance=ExtResource("17_cnsra")]
