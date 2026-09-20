@@ -40,6 +40,9 @@ func AnimationFinished()->void:
 	death_smoke.global_position = actor.global_position
 #	添加烟雾特效
 	get_tree().current_scene.add_child(death_smoke)
+#	添加分数
+	ScoreManagers.add_score(actor.score_value)
+
 	actor.queue_free()
 func Exit()->void:
 	actor.sprite.animation_finished.disconnect(AnimationFinished)

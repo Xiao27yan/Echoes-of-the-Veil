@@ -471,9 +471,11 @@ radius = 42.0119
 radius = 236.13556
 
 [node name="Swordsman" type="CharacterBody2D" unique_id=1110341561]
-collision_mask = 256
+collision_mask = 8388864
 script = ExtResource("1_iqwbu")
+striking_distance = 50
 faction = 1
+attack_interval = 1.0
 hp = 10
 move_speed = 150.0
 attack_animations = Array[String](["attack_03"])

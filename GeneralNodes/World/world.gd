@@ -3,7 +3,7 @@ class_name World extends Node
 
 
 func _ready() -> void:
-	var cursor_texture = load("res://GeneralNodes/Cursor/crosshair003.png")
+	var cursor_texture = load("res://GeneralNodes/Cursor/crosshair176.png")
 
 	Input.set_custom_mouse_cursor(
 		cursor_texture,

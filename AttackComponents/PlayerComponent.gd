@@ -16,6 +16,11 @@ func Attack():
 
 	var mouse_position = actor.get_global_mouse_position()
 
-	projectile.direction = cast_point.global_position.direction_to(
-		mouse_position
-	)
+	var direction = cast_point.global_position.direction_to(mouse_position)
+
+	# 在原方向基础上随机偏移 ±5°
+	var angle_offset = deg_to_rad(randf_range(-5.0, 5.0))
+
+	direction = direction.rotated(angle_offset)
+
+	projectile.direction = direction

@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://bf5mwaqfn8n66"
 
 LevelManager="*uid://bdw6ck0moon47"
 PlayerHud="*uid://cx0g0e01t6p6k"
+ScoreManagers="*uid://dupnaux82u7b"
 
 [display]
 

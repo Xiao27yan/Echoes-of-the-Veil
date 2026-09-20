@@ -347,6 +347,7 @@ radius = 236.13556
 
 [node name="SkeletonArcher" type="CharacterBody2D" unique_id=1110341561]
 collision_layer = 256
+collision_mask = 8388608
 script = ExtResource("1_idwao")
 striking_distance = 800
 faction = 2

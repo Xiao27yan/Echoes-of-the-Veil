@@ -324,7 +324,7 @@ radius = 42.0119
 radius = 236.13556
 
 [node name="Lancer" type="CharacterBody2D" unique_id=1110341561]
-collision_mask = 256
+collision_mask = 8388864
 script = ExtResource("1_3nlxe")
 faction = 1
 hp = 10

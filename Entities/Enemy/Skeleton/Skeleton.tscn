@@ -353,6 +353,7 @@ radius = 236.13556
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=1110341561]
 collision_layer = 256
+collision_mask = 8388608
 script = ExtResource("1_s361c")
 faction = 2
 attack_interval = 1.0

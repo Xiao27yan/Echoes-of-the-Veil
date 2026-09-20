@@ -3,6 +3,7 @@ class_name Actor extends CharacterBody2D
 
 @onready var detection_box: Area2D = $DetectionBox
 
+
 var cool_down:bool =false
 var target:CharacterBody2D = null
 var direction:Vector2 = Vector2.ZERO
@@ -17,6 +18,7 @@ enum Faction {
 	NEUTRAL
 }
 
+@export var score_value: int = 10
 @export var striking_distance = 20
 @export var faction: Faction 
 @export var attack_interval: float = 3
@@ -117,7 +119,7 @@ func UpdateAnimation(state:String)->void:
 func AnimDirection()->String:
 	return "side"
 
-func make_invulnerable(invulnerable_duration:float=0.05)->void:
+func make_invulnerable(invulnerable_duration:float=0.1)->void:
 	invulnerable = true
 	hit_box.monitoring = false	
 	await get_tree().create_timer(invulnerable_duration).timeout

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://5nv4f888r3lk" path="res://GUI/player_hud/player_hud.gd" id="1_oghrr"]
 [ext_resource type="Texture2D" uid="uid://cwgtyyopfki47" path="res://GUI/player_hud/gui-health.png" id="2_4b3j6"]
 [ext_resource type="PackedScene" uid="uid://cdlwv8el7crj1" path="res://GUI/player_hud/heart_gui.tscn" id="3_yhjvm"]
+[ext_resource type="Script" uid="uid://dtt24jtd38c4c" path="res://GUI/Score/score_gui.gd.gd" id="4_4b3j6"]
+[ext_resource type="FontFile" uid="uid://3wm387bcv80u" path="res://GUI/Score/PixeloidMono.ttf" id="5_yhjvm"]
 
 [node name="PlayerHud" type="CanvasLayer" unique_id=1260391793]
 script = ExtResource("1_oghrr")
@@ -16,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=309179632]
+visible = false
 position = Vector2(1182, 33)
 scale = Vector2(1.6136348, 1.8750002)
 texture = ExtResource("2_4b3j6")
@@ -24,10 +27,10 @@ region_rect = Rect2(29.26598, 0, 33.73402, 8.712978)
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Control" unique_id=108859519]
 layout_mode = 0
-offset_left = 1120.0
-offset_top = 53.0
-offset_right = 1248.0
-offset_bottom = 71.0
+offset_left = 41.0
+offset_top = 25.0
+offset_right = 169.0
+offset_bottom = 43.0
 theme_override_constants/h_separation = 13
 theme_override_constants/v_separation = 9
 
@@ -90,3 +93,31 @@ layout_mode = 2
 
 [node name="HeartGui20" parent="Control/HFlowContainer" unique_id=122740651 instance=ExtResource("3_yhjvm")]
 layout_mode = 2
+
+[node name="Score" type="Control" parent="." unique_id=1284482322]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1162.0
+offset_top = 20.0
+offset_right = 1202.0
+offset_bottom = 60.0
+script = ExtResource("4_4b3j6")
+
+[node name="ScoreTitle" type="Label" parent="Score" unique_id=1828981546]
+layout_mode = 0
+offset_left = 28.0
+offset_top = -18.0
+offset_right = 129.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("5_yhjvm")
+theme_override_font_sizes/font_size = 25
+text = "SCORE"
+
+[node name="ScoreLabel" type="Label" parent="Score" unique_id=140605645]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 17.0
+offset_right = 94.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("5_yhjvm")
+text = "000000"

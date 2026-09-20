@@ -28,7 +28,6 @@
 [ext_resource type="Script" uid="uid://cp35qxinloqdp" path="res://Player/Scripts/state_stun.gd" id="24_8viyr"]
 [ext_resource type="Script" uid="uid://dej4iof3k6nsp" path="res://Player/Scripts/state.death.gd" id="28_755ss"]
 [ext_resource type="AudioStream" uid="uid://uoew0s2k533b" path="res://AttackEffect/firball/audio/shoot.mp3" id="30_755ss"]
-[ext_resource type="Script" uid="uid://h1xuhff7vory" path="res://Player/playerCamera.gd" id="31_bbimk"]
 [ext_resource type="PackedScene" uid="uid://bwklqvbghsvwc" path="res://AttackEffect/iceball/iceball.tscn" id="32_i4o1l"]
 [ext_resource type="Script" uid="uid://jol2y0njl4eh" path="res://AttackComponents/PlayerComponent.gd" id="33_j2n6q"]
 
@@ -1279,7 +1278,7 @@ radius = 16.03122
 
 [node name="Player" type="CharacterBody2D" unique_id=1667374712]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 8388609
 script = ExtResource("1_x3vf3")
 faction = 1
 
@@ -1331,15 +1330,6 @@ visible = false
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_n471f")
 debug_color = Color(0.98106664, 0.11512721, 0.19521293, 0.41960785)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1191565102]
-limit_enabled = false
-limit_left = -5000
-limit_top = -5000
-limit_right = 5000
-limit_bottom = 500
-editor_draw_limits = true
-script = ExtResource("31_bbimk")
 
 [node name="cast_point" type="Marker2D" parent="." unique_id=1254850875]
 position = Vector2(11, -16)

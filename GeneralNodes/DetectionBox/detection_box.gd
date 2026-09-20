@@ -8,7 +8,7 @@ class_name Dectection_Box extends Area2D
 
 
 # 当前检测到的目标
-var targets:Array[CharacterBody2D] = []
+var targets: Array[CharacterBody2D] = []
 
 
 func _ready() -> void:
@@ -34,9 +34,11 @@ func _on_detection_area_body_entered(body):
 		actor.state_machine.ChangeState(chase)
 
 
-
 # 目标离开检测范围
 func _on_detection_area_body_exited(body):
+
+	if not _is_valid_target(body):
+		return
 
 	if body in targets:
 		targets.erase(body)
@@ -49,10 +51,10 @@ func _on_detection_area_body_exited(body):
 		# 还有目标
 		if actor.target:
 			actor.state_machine.ChangeState(chase)
-
 		else:
 			actor.target = null
-			
+
+
 # 找距离最近目标
 func _find_closest_target() -> CharacterBody2D:
 
@@ -74,19 +76,19 @@ func _find_closest_target() -> CharacterBody2D:
 			closest_distance = distance
 			closest_target = target
 
-
 	return closest_target
 
 
 # 判断目标是否合法
-func _is_valid_target(body)->bool:
-	if body is Actor or Player:
+func _is_valid_target(body) -> bool:
 
+	if body is Actor or body is Player:
 		return body.faction != actor.faction
+
 	return false
 
 
 func _update_detection_range():
-	if collision_shape.shape is CircleShape2D:
 
+	if collision_shape.shape is CircleShape2D:
 		collision_shape.shape.radius = detection_range

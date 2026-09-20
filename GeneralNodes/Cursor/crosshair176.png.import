@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deav37cwennri"
-path="res://.godot/imported/Gemini_Generated_Image_p0p726p0p726p0p7.jpg-329de2f34878dab54ebea6f6ff2f9e2d.ctex"
+uid="uid://qj58fs7elwvf"
+path="res://.godot/imported/crosshair176.png-ad16ce786d3731339885e1e983fc8fa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GeneralNodes/Cursor/Gemini_Generated_Image_p0p726p0p726p0p7.jpg"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_p0p726p0p726p0p7.jpg-329de2f34878dab54ebea6f6ff2f9e2d.ctex"]
+source_file="res://GeneralNodes/Cursor/crosshair176.png"
+dest_files=["res://.godot/imported/crosshair176.png-ad16ce786d3731339885e1e983fc8fa0.ctex"]
 
 [params]
 
