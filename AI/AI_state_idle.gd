@@ -5,6 +5,8 @@ class_name AI_State_Idle extends AI_State
 @export var state_duration_max:float=1.2
 
 @onready var after_idle_state: AI_State_Run = $"../Run"
+#@onready var after_idle_state: AI_State_Idle = $"."
+
 
 
 

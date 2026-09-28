@@ -15,7 +15,7 @@ func Attack():
 	get_tree().current_scene.add_child(effect)
 
 	effect.global_position = cast_point.global_position
-
+	
 	effect.direction = cast_point.global_position.direction_to(
 		actor.target.global_position
 	)

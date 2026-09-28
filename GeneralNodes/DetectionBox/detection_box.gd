@@ -12,6 +12,8 @@ var targets: Array[CharacterBody2D] = []
 
 
 func _ready() -> void:
+	monitoring = false
+	
 	_update_detection_range()
 
 	body_entered.connect(_on_detection_area_body_entered)

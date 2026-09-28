@@ -259,7 +259,11 @@ radius = 236.13556
 collision_layer = 256
 collision_mask = 8388608
 script = ExtResource("1_23xon")
+striking_distance = 25
 faction = 2
+max_hp = 8
+hp = 8
+move_speed = 100.0
 attack_animations = Array[String](["attack"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]

@@ -9,7 +9,7 @@ var current_weapon = {
 	"attack_animation":"attack_slice",
 	"damage":3
 }
-var hp:int =6
+var hp:int =20
 var invulnerable:bool =false
 
 signal player_damaged
@@ -136,7 +136,7 @@ func AnimDirection()->String:
 	else:
 		return "side"
 		
-func make_invulnerable(invulnerable_duration:float=2.0)->void:
+func make_invulnerable(invulnerable_duration:float=1.0)->void:
 	invulnerable = true
 	hit_box.monitoring = false	
 	await get_tree().create_timer(invulnerable_duration).timeout

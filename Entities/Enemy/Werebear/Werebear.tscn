@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://w7bjvkt7c61d"]
 
 [ext_resource type="Script" uid="uid://dgn8hnhk2i3i7" path="res://AI/Actor.gd" id="1_0tn31"]
+[ext_resource type="AudioStream" uid="uid://ba2bcnqm6yc55" path="res://Entities/Enemy/Werebear/roar.wav" id="2_14wcv"]
 [ext_resource type="Texture2D" uid="uid://ddxisp0c6yl0v" path="res://Entities/Enemy/Werebear/Attack/Werebear_Attack01.png" id="2_sm3fu"]
 [ext_resource type="Texture2D" uid="uid://drk38p0s83pg7" path="res://Entities/Enemy/Werebear/Attack/Werebear_Attack02.png" id="3_14wcv"]
 [ext_resource type="Texture2D" uid="uid://gymqtqhh3r2p" path="res://Entities/Enemy/Werebear/Death/Werebear_Death.png" id="4_iwuvq"]
@@ -312,7 +313,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_side",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -382,18 +383,21 @@ radius = 236.13556
 collision_layer = 256
 collision_mask = 8388608
 script = ExtResource("1_0tn31")
+attack_sound = ExtResource("2_14wcv")
+striking_distance = 40
 faction = 2
-attack_interval = 1.0
-hp = 9
-move_speed = 150.0
+attack_interval = 2.0
+max_hp = 250
+hp = 250
+move_speed = 65.0
 attack_animations = Array[String](["attack_02"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_rykuy")
-animation = &"attack_01_side"
-frame = 8
-frame_progress = 1.0
+animation = &"idle_side"
+autoplay = "idle_side"
+frame_progress = 0.5983901
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4745363]
 position = Vector2(1, -1)
@@ -434,7 +438,7 @@ debug_color = Color(0.7618527, 0.44888705, 0.1301704, 0.41960785)
 [node name="HurtBox" parent="." unique_id=1184801260 instance=ExtResource("17_pum4c")]
 collision_layer = 0
 collision_mask = 6
-damage = 3
+damage = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1834469950]
 position = Vector2(2, 16)
@@ -456,3 +460,6 @@ position = Vector2(10, -14)
 script = ExtResource("19_p8c7g")
 
 [node name="HealthBar" parent="." unique_id=385557861 instance=ExtResource("20_my2gg")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=443376742]
+position = Vector2(-1, 0)

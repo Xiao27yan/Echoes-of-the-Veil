@@ -342,12 +342,12 @@ radius = 236.13556
 collision_layer = 256
 collision_mask = 8388608
 script = ExtResource("1_abt3t")
-striking_distance = 50
+striking_distance = 30
 faction = 2
-attack_interval = 1.0
-max_hp = 100
-hp = 100
-move_speed = 150.0
+attack_interval = 1.2
+max_hp = 24
+hp = 24
+move_speed = 170.0
 attack_animations = Array[String](["attack_02"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=335161801]
@@ -384,7 +384,6 @@ attack_end_frame = 6
 script = ExtResource("14_epwx2")
 
 [node name="HitBox" parent="." unique_id=1050192186 instance=ExtResource("15_qfimo")]
-visible = false
 collision_layer = 256
 collision_mask = 0
 
@@ -394,7 +393,6 @@ shape = SubResource("CircleShape2D_u80os")
 debug_color = Color(0.7618527, 0.44888705, 0.1301704, 0.41960785)
 
 [node name="HurtBox" parent="." unique_id=1184801260 instance=ExtResource("16_pgx7r")]
-visible = false
 collision_layer = 0
 collision_mask = 6
 damage = 3
@@ -405,7 +403,6 @@ shape = SubResource("CircleShape2D_7athc")
 debug_color = Color(0.89514464, 0.3030407, 0.27102074, 0.41960785)
 
 [node name="DetectionBox" parent="." unique_id=2006781143 instance=ExtResource("17_qsx2v")]
-visible = false
 collision_layer = 0
 detection_range = 1000.0
 

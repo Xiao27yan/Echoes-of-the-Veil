@@ -4,6 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://dh4oppvnk8lma" path="res://TileMaps/Sprites/Floors/Floors_Tiles.png" id="1_m36aa"]
 [ext_resource type="Texture2D" uid="uid://gva1skx85hrh" path="res://TileMaps/Sprites/Trees/Model_01/Size_02.png" id="2_m36aa"]
 [ext_resource type="Texture2D" uid="uid://bo1t2skvy0wlx" path="res://TileMaps/Sprites/Shadows.png" id="3_js862"]
+[ext_resource type="PackedScene" uid="uid://b5uuhsgswx6mi" path="res://Entities/Enemy/SkeletonArcher/SkeletonArcher.tscn" id="5_gsng3"]
+[ext_resource type="PackedScene" uid="uid://bqjcsekyq326h" path="res://Entities/Enemy/Skeleton/Skeleton.tscn" id="6_aynjr"]
+[ext_resource type="PackedScene" uid="uid://b5s17xr6tvij2" path="res://Entities/Enemy/Werewolf/Werewolf.tscn" id="7_6ti3w"]
+[ext_resource type="PackedScene" uid="uid://c1ck2glw70fql" path="res://Entities/Ally/ArmoredAxeman/ArmoredAxeman.tscn" id="8_v2cc5"]
+[ext_resource type="PackedScene" uid="uid://dsq52xx4h3rp3" path="res://Entities/Ally/Lancer/Lancer.tscn" id="9_cufyr"]
+[ext_resource type="PackedScene" uid="uid://m3deg8uph38n" path="res://Entities/Ally/Soldier/Soldier.tscn" id="10_421lr"]
+[ext_resource type="PackedScene" uid="uid://qfhxiu1l15ji" path="res://Entities/Ally/Swordsman/Swordsman.tscn" id="11_ysdjg"]
+[ext_resource type="PackedScene" uid="uid://bqsgtyjdd0y36" path="res://Entities/Ally/Knight/Knight.tscn" id="12_hd61r"]
+[ext_resource type="PackedScene" uid="uid://c65qrerscars6" path="res://Entities/Ally/Slime/Slime.tscn" id="13_dcw4a"]
+[ext_resource type="PackedScene" uid="uid://c7lt7112fl88o" path="res://Entities/Enemy/Orc/Orc.tscn" id="14_v2cc5"]
+[ext_resource type="PackedScene" uid="uid://bxpo8vddtxdf2" path="res://Entities/Enemy/OrcRider/OrcRider.tscn" id="15_cufyr"]
+[ext_resource type="PackedScene" uid="uid://w7bjvkt7c61d" path="res://Entities/Enemy/Werebear/Werebear.tscn" id="16_421lr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_js862"]
 texture = ExtResource("1_m36aa")
@@ -211,4 +223,40 @@ tile_set = SubResource("TileSet_8kd7n")
 
 [node name="Player" parent="." unique_id=730408936 instance=ExtResource("1_dfy80")]
 z_index = 8
-position = Vector2(185, 158)
+position = Vector2(325, 168)
+
+[node name="SkeletonArcher" parent="." unique_id=1110341561 instance=ExtResource("5_gsng3")]
+position = Vector2(758, 419)
+
+[node name="Skeleton" parent="." unique_id=883207738 instance=ExtResource("6_aynjr")]
+position = Vector2(439, 574)
+
+[node name="SkeletonArcher2" parent="." unique_id=623319294 instance=ExtResource("5_gsng3")]
+position = Vector2(1039, 581)
+
+[node name="Werewolf" parent="." unique_id=2105348029 instance=ExtResource("7_6ti3w")]
+position = Vector2(758, 587)
+
+[node name="ArmoredAxeman" parent="." unique_id=308893581 instance=ExtResource("8_v2cc5")]
+position = Vector2(382, 469)
+
+[node name="Lancer" parent="." unique_id=969473846 instance=ExtResource("9_cufyr")]
+position = Vector2(1371, 495)
+
+[node name="Soldier" parent="." unique_id=1256580692 instance=ExtResource("10_421lr")]
+position = Vector2(843, 173)
+
+[node name="Swordsman" parent="." unique_id=2020830027 instance=ExtResource("11_ysdjg")]
+position = Vector2(1062, 357)
+
+[node name="Knight" parent="." unique_id=1405776121 instance=ExtResource("12_hd61r")]
+position = Vector2(197, 527)
+
+[node name="Slime" parent="." unique_id=1321019322 instance=ExtResource("13_dcw4a")]
+position = Vector2(686, 136)
+
+[node name="Orc" parent="." unique_id=674637102 instance=ExtResource("14_v2cc5")]
+
+[node name="OrcRider" parent="." unique_id=1846785207 instance=ExtResource("15_cufyr")]
+
+[node name="Werebear" parent="." unique_id=137015433 instance=ExtResource("16_421lr")]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dgn8hnhk2i3i7" path="res://AI/Actor.gd" id="1_vqk5g"]
 [ext_resource type="Texture2D" uid="uid://duhtn7y7uqsgp" path="res://Entities/Ally/Wizard/Attack/Wizard_Attack01(With magic effects).png" id="2_ei8ea"]
 [ext_resource type="Texture2D" uid="uid://c8p6elwwer3mq" path="res://Entities/Ally/Wizard/Attack/Wizard_Attack01.png" id="2_wloka"]
+[ext_resource type="AudioStream" uid="uid://uoew0s2k533b" path="res://AttackEffect/firball/audio/shoot.mp3" id="2_xqvds"]
 [ext_resource type="Texture2D" uid="uid://dxh0285of283x" path="res://Entities/Ally/Wizard/Attack/Wizard_Attack02(With magic effects).png" id="3_0nt1v"]
 [ext_resource type="Texture2D" uid="uid://8ph31mm11auy" path="res://Entities/Ally/Wizard/Death/Wizard_Death.png" id="5_mrnjl"]
 [ext_resource type="Texture2D" uid="uid://qksdf2e4igj3" path="res://Entities/Ally/Wizard/Idle/Wizard_Idle.png" id="7_l5ewc"]
@@ -475,6 +476,7 @@ radius = 236.13556
 [node name="Wizard" type="CharacterBody2D" unique_id=1110341561]
 collision_mask = 8388864
 script = ExtResource("1_vqk5g")
+shoot_sound = ExtResource("2_xqvds")
 striking_distance = 800
 faction = 1
 attack_animations = Array[String](["attack"])
@@ -504,11 +506,11 @@ script = ExtResource("10_scjx7")
 [node name="Stun" type="Node" parent="StateMachine" unique_id=474964906]
 script = ExtResource("11_jy5rn")
 
-[node name="Attack" type="Node" parent="StateMachine" unique_id=383719052]
-script = ExtResource("12_mxciw")
-
 [node name="Chase" type="Node" parent="StateMachine" unique_id=506426489]
 script = ExtResource("13_tt28p")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=383719052]
+script = ExtResource("12_mxciw")
 
 [node name="HitBox" parent="." unique_id=1050192186 instance=ExtResource("14_087yd")]
 collision_layer = 2
@@ -546,3 +548,5 @@ effect = ExtResource("20_ypq1j")
 [node name="HealthBar" parent="." unique_id=385557861 instance=ExtResource("21_cwia0")]
 
 [node name="Absorb" parent="." unique_id=956436138 instance=ExtResource("22_r0xhq")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=691128487]

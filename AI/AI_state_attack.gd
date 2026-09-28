@@ -6,6 +6,9 @@ var frame:int
 @export var attack_start_frame:int
 @export var attack_end_frame:int
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $"../../AudioStreamPlayer2D"
+
+
 @onready var chase: AI_State_Chase = $"../Chase"
 @onready var idle: AI_State_Idle = $"../Idle"
 @onready var run: AI_State_Run = $"../Run"
@@ -13,6 +16,9 @@ var frame:int
 
 
 func Enter()->void:
+	if actor.attack_sound !=null:
+		audio_stream_player_2d.stream=actor.attack_sound
+		audio_stream_player_2d.play()
 	attacking = true
 	actor.cool_down=true
 	var anim = actor.attack_animations.pick_random()

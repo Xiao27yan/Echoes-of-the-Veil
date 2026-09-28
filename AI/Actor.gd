@@ -4,6 +4,8 @@ class_name Actor extends CharacterBody2D
 @onready var detection_box: Area2D = $DetectionBox
 
 
+
+
 var cool_down:bool =false
 var target:CharacterBody2D = null
 var direction:Vector2 = Vector2.ZERO
@@ -18,6 +20,8 @@ enum Faction {
 	NEUTRAL
 }
 
+@export var attack_sound: AudioStream
+@export var burst_sound: AudioStream
 @export var score_value: int = 10
 @export var striking_distance = 20
 @export var faction: Faction 
