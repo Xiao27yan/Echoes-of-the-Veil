@@ -1,19 +1,22 @@
 class_name Player extends CharacterBody2D
 
+
+#流星雨
+var meteor_rain_preview: MeteorRain
+var meteor_aiming: bool = false
+
 var mouse_direction:Vector2 = Vector2.ZERO
 var max_hp:int =20
 var direction:Vector2 = Vector2.ZERO
 var cardinal_direction:Vector2 = Vector2.RIGHT
-var current_weapon = {
-	"name":"slice",
-	"attack_animation":"attack_slice",
-	"damage":3
-}
 var hp:int =20
 var invulnerable:bool =false
 
 signal player_damaged
 signal player_destroyed
+
+#流星雨实例
+@export var meteor_rain_scene: PackedScene
 
 @export var move_speed:float =200.0
 @export var decelerate_speed :float =10.0
@@ -161,25 +164,36 @@ func TakeDamaged(hurt_box:HurtBox):
 		update_hp(99)
 	return
 		
-func _unhandled_input(_event: InputEvent) -> void:
-	
-	if _event.is_action_pressed("weapon1"):
-		current_weapon.name  = 'slice'
-		current_weapon.attack_animation="attack_slice"
-		current_weapon.damage=3
-		
-	elif  _event.is_action_pressed("weapon2"):
-		current_weapon.name  = 'pierce'
-		current_weapon.attack_animation="attack_pierce"
-		current_weapon.damage=2
-	elif _event.is_action_pressed("weapon3"):
-		current_weapon.name  = 'hit'
-		current_weapon.attack_animation="attack_hit"
-		current_weapon.damage=1
-	hurt_box.damage  = current_weapon.damage
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("meteor_rain"):
+		StartMeteorRain()
+
+	if meteor_aiming and event.is_action_pressed("ui_accept"):
+		ConfirmMeteorRain()
+
+	return
 	
 func update_hp(delta:int)->void:
 	hp = clampi(hp +delta,0,max_hp)
 	PlayerHud.update_hp(hp,max_hp)
 	pass
 	
+	
+func StartMeteorRain() -> void:
+	if meteor_aiming:
+		return
+
+	meteor_aiming = true
+
+	meteor_rain_preview = meteor_rain_scene.instantiate()
+	get_tree().current_scene.add_child(meteor_rain_preview)
+
+	meteor_rain_preview.player = self
+	
+func ConfirmMeteorRain() -> void:
+	if not meteor_aiming:
+		return
+
+	meteor_aiming = false
+
+	meteor_rain_preview.Confirm()

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cvplwa8obphrv" path="res://Player/Scripts/player.gd" id="1_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://by6m5xy04yb2d" path="res://Player/Sprites/Attack/Hit/Hit_Down-Sheet.png" id="2_5htga"]
+[ext_resource type="PackedScene" uid="uid://bidbp6reem3ur" path="res://Magic/MeteorRain/MeteorRain.tscn" id="2_7x5p2"]
 [ext_resource type="Texture2D" uid="uid://cw82n8w13nf4n" path="res://Player/Sprites/Idle/Idle_Down-Sheet.png" id="2_od3ui"]
 [ext_resource type="Texture2D" uid="uid://dypj0hyga2460" path="res://Player/Sprites/Attack/Hit/Hit_Up-Sheet.png" id="4_dkpta"]
 [ext_resource type="Texture2D" uid="uid://cesrekoimi77t" path="res://Player/Sprites/Idle/Idle_Up-Sheet.png" id="4_x3vf3"]
@@ -1359,6 +1360,7 @@ animations = [{
 collision_layer = 6
 collision_mask = 8388609
 script = ExtResource("1_x3vf3")
+meteor_rain_scene = ExtResource("2_7x5p2")
 faction = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019363973]
@@ -1426,7 +1428,6 @@ hframes = 8
 vframes = 2
 
 [node name="PlayerAura" type="AnimatedSprite2D" parent="." unique_id=549664285]
-visible = false
 z_index = -10
 position = Vector2(-2, -13)
 sprite_frames = SubResource("SpriteFrames_vqfw3")
