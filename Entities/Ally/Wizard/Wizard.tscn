@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dgn8hnhk2i3i7" path="res://AI/Actor.gd" id="1_vqk5g"]
 [ext_resource type="Texture2D" uid="uid://duhtn7y7uqsgp" path="res://Entities/Ally/Wizard/Attack/Wizard_Attack01(With magic effects).png" id="2_ei8ea"]
 [ext_resource type="Texture2D" uid="uid://c8p6elwwer3mq" path="res://Entities/Ally/Wizard/Attack/Wizard_Attack01.png" id="2_wloka"]
-[ext_resource type="AudioStream" uid="uid://uoew0s2k533b" path="res://AttackEffect/firball/audio/shoot.mp3" id="2_xqvds"]
 [ext_resource type="Texture2D" uid="uid://dxh0285of283x" path="res://Entities/Ally/Wizard/Attack/Wizard_Attack02(With magic effects).png" id="3_0nt1v"]
 [ext_resource type="Texture2D" uid="uid://8ph31mm11auy" path="res://Entities/Ally/Wizard/Death/Wizard_Death.png" id="5_mrnjl"]
 [ext_resource type="Texture2D" uid="uid://qksdf2e4igj3" path="res://Entities/Ally/Wizard/Idle/Wizard_Idle.png" id="7_l5ewc"]
@@ -19,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cahchd2omtq51" path="res://GeneralNodes/HitBox/hit_box.tscn" id="14_087yd"]
 [ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="15_q4wjg"]
 [ext_resource type="PackedScene" uid="uid://dfrasj4kry68f" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="16_s61vc"]
-[ext_resource type="Script" uid="uid://cmb5dej6fo7j6" path="res://AttackComponents/WizardComponent.gd" id="18_pi5qt"]
+[ext_resource type="Script" uid="uid://cmb5dej6fo7j6" path="res://AttackComponents/Others/ProjectileComponent.gd" id="18_pi5qt"]
 [ext_resource type="PackedScene" uid="uid://cjep7814xi01n" path="res://AttackEffect/firball/FireBall.tscn" id="20_ypq1j"]
 [ext_resource type="PackedScene" uid="uid://doenu0vpipq8b" path="res://GeneralNodes/HealthBar/HealthBar.tscn" id="21_cwia0"]
 [ext_resource type="PackedScene" uid="uid://dqtaooylm2axb" path="res://AttackEffect/absorb/Absorb.tscn" id="22_r0xhq"]
@@ -476,7 +475,6 @@ radius = 236.13556
 [node name="Wizard" type="CharacterBody2D" unique_id=1110341561]
 collision_mask = 8388864
 script = ExtResource("1_vqk5g")
-shoot_sound = ExtResource("2_xqvds")
 striking_distance = 800
 faction = 1
 attack_animations = Array[String](["attack"])

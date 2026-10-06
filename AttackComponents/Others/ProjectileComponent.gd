@@ -1,4 +1,4 @@
-class_name WizardComponent
+class_name ProjectileComponent
 extends AttackComponent
 
 @export var effect: PackedScene

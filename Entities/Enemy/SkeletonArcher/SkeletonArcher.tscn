@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://cahchd2omtq51" path="res://GeneralNodes/HitBox/hit_box.tscn" id="13_r343f"]
 [ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="14_1ejvc"]
 [ext_resource type="PackedScene" uid="uid://dfrasj4kry68f" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="15_m8t1u"]
-[ext_resource type="Script" uid="uid://cpdo4dlmmf5fb" path="res://AttackComponents/SkeletonArcher.gd" id="16_idwao"]
-[ext_resource type="PackedScene" uid="uid://c4h0l16kpt5ve" path="res://AttackEffect/Arrow/Arrow.tscn" id="17_4fef1"]
+[ext_resource type="Script" uid="uid://cmb5dej6fo7j6" path="res://AttackComponents/Others/ProjectileComponent.gd" id="17_4fef1"]
 [ext_resource type="PackedScene" uid="uid://doenu0vpipq8b" path="res://GeneralNodes/HealthBar/HealthBar.tscn" id="17_cnsra"]
+[ext_resource type="PackedScene" uid="uid://c4h0l16kpt5ve" path="res://AttackEffect/Arrow/Arrow.tscn" id="18_r1o3i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1awoq"]
 atlas = ExtResource("2_4fef1")
@@ -421,7 +421,7 @@ debug_color = Color(0.20371264, 0.63552153, 0.24681509, 0.41960785)
 position = Vector2(10, -14)
 
 [node name="AttackComponent" type="Node" parent="." unique_id=1604756709]
-script = ExtResource("16_idwao")
-effect = ExtResource("17_4fef1")
+script = ExtResource("17_4fef1")
+effect = ExtResource("18_r1o3i")
 
 [node name="HealthBar" parent="." unique_id=385557861 instance=ExtResource("17_cnsra")]

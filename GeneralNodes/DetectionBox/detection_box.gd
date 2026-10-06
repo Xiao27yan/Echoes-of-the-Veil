@@ -12,7 +12,8 @@ var targets: Array[CharacterBody2D] = []
 
 
 func _ready() -> void:
-	monitoring = false
+#	测试用的
+	#monitoring = false
 	
 	_update_detection_range()
 

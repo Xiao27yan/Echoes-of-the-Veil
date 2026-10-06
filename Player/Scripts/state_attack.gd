@@ -16,7 +16,7 @@ func Enter() -> void:
 
 	attacking = true
 	player.UpdateAnimation("attack_hit")
-	player.attack_component.Attack()
+	player.projectile_component.Attack()
 	if not player.sprite.animation_finished.is_connected(EndAttack):
 		player.sprite.animation_finished.connect(EndAttack)
 
@@ -43,7 +43,7 @@ func EndAttack() -> void:
 	# 按住攻击键 → 继续攻击
 	if Input.is_action_pressed("attack"):
 
-		player.attack_component.Attack()
+		player.projectile_component.Attack()
 		player.UpdateAnimation("attack_hit")
 
 		return

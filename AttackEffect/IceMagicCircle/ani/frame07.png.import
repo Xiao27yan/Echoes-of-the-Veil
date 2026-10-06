@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvnd4lrxppxoy"
-path="res://.godot/imported/Wizard_Attack02_Effect.png-9cb787d473a6d91c752a3e9e9c212841.ctex"
+uid="uid://bjkj8ypve7vx5"
+path="res://.godot/imported/frame07.png-265f095e1b1057363618306b59a894ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AttackEffect/firball/Wizard_Attack02_Effect.png"
-dest_files=["res://.godot/imported/Wizard_Attack02_Effect.png-9cb787d473a6d91c752a3e9e9c212841.ctex"]
+source_file="res://AttackEffect/IceMagicCircle/ani/frame07.png"
+dest_files=["res://.godot/imported/frame07.png-265f095e1b1057363618306b59a894ae.ctex"]
 
 [params]
 

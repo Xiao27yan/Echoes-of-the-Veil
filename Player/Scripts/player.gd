@@ -27,7 +27,8 @@ enum Faction {
 }
 @export var faction: Faction = Faction.PLAYER
 
-@onready var attack_component: PlayerComponent = $AttackComponent
+@onready var projectile_component: PlayerProjectileComponent = $ProjectileComponent
+
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var state_machine: PlayerStateMachine = $stateMachine

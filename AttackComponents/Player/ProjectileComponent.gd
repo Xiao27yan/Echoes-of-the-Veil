@@ -1,4 +1,4 @@
-class_name PlayerComponent
+class_name PlayerProjectileComponent
 extends AttackComponent
 
 @export var effect: PackedScene

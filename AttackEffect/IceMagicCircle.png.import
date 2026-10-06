@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baxb7g5rvb68t"
-path="res://.godot/imported/frame0001.png-854dece4e4fa1d31428f6b1ee44942be.ctex"
+uid="uid://bpaxqlgq2evg8"
+path="res://.godot/imported/IceMagicCircle.png-b430e6026858ccb3de2a2b5a0936fff4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AttackEffect/firball/bust1/frame0001.png"
-dest_files=["res://.godot/imported/frame0001.png-854dece4e4fa1d31428f6b1ee44942be.ctex"]
+source_file="res://AttackEffect/IceMagicCircle.png"
+dest_files=["res://.godot/imported/IceMagicCircle.png-b430e6026858ccb3de2a2b5a0936fff4.ctex"]
 
 [params]
 

@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dkfxif82f4do0" path="res://Player/aureole/frame002.png" id="31_7x5p2"]
 [ext_resource type="Texture2D" uid="uid://dkxbd4t7q0nwa" path="res://Player/aureole/frame003.png" id="32_6eb1q"]
 [ext_resource type="PackedScene" uid="uid://bwklqvbghsvwc" path="res://AttackEffect/iceball/iceball.tscn" id="32_i4o1l"]
-[ext_resource type="Script" uid="uid://jol2y0njl4eh" path="res://AttackComponents/PlayerComponent.gd" id="33_j2n6q"]
+[ext_resource type="Script" uid="uid://jol2y0njl4eh" path="res://AttackComponents/Player/ProjectileComponent.gd" id="33_j2n6q"]
 [ext_resource type="Texture2D" uid="uid://crpsa3uph5ap2" path="res://Player/aureole/frame004.png" id="33_wvbyc"]
 [ext_resource type="Texture2D" uid="uid://bc58vl1fsnr87" path="res://Player/aureole/frame005.png" id="34_gvnt1"]
 [ext_resource type="Texture2D" uid="uid://bwbfxvb05iasu" path="res://Player/aureole/frame006.png" id="35_1kmt7"]
@@ -1356,7 +1356,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1667374712]
-collision_layer = 7
+collision_layer = 6
 collision_mask = 8388609
 script = ExtResource("1_x3vf3")
 faction = 1
@@ -1405,15 +1405,14 @@ collision_mask = 256
 damage = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=499794691]
-visible = false
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_n471f")
 debug_color = Color(0.98106664, 0.11512721, 0.19521293, 0.41960785)
 
 [node name="cast_point" type="Marker2D" parent="." unique_id=1254850875]
-position = Vector2(11, -16)
+position = Vector2(10, -20)
 
-[node name="AttackComponent" type="Node" parent="." unique_id=1908598922]
+[node name="ProjectileComponent" type="Node" parent="." unique_id=1908598922]
 script = ExtResource("33_j2n6q")
 effect = ExtResource("32_i4o1l")
 
@@ -1427,6 +1426,7 @@ hframes = 8
 vframes = 2
 
 [node name="PlayerAura" type="AnimatedSprite2D" parent="." unique_id=549664285]
+visible = false
 z_index = -10
 position = Vector2(-2, -13)
 sprite_frames = SubResource("SpriteFrames_vqfw3")
