@@ -22,7 +22,7 @@ func StartFall(position: Vector2) -> void:
 	meteor_sprite.visible = true
 	meteor_sprite.play("fall")
 
-
+#“帮我把一个东西，在指定时间内，从 A 平滑移动到 B。”
 	# 陨石落下
 	var tween := create_tween()
 

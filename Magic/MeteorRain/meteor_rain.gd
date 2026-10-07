@@ -39,6 +39,7 @@ func _process(_delta: float) -> void:
 	if player == null:
 		return
 
+#让魔法阵随鼠标
 	var mouse_position := get_global_mouse_position()
 
 	var direction := player.global_position.direction_to(mouse_position)

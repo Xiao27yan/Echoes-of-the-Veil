@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cvplwa8obphrv" path="res://Player/Scripts/player.gd" id="1_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://by6m5xy04yb2d" path="res://Player/Sprites/Attack/Hit/Hit_Down-Sheet.png" id="2_5htga"]
+[ext_resource type="PackedScene" uid="uid://bavyeaocjd243" path="res://Magic/MagicWave/MagicWave.tscn" id="2_6eb1q"]
 [ext_resource type="PackedScene" uid="uid://bidbp6reem3ur" path="res://Magic/MeteorRain/MeteorRain.tscn" id="2_7x5p2"]
 [ext_resource type="Texture2D" uid="uid://cw82n8w13nf4n" path="res://Player/Sprites/Idle/Idle_Down-Sheet.png" id="2_od3ui"]
+[ext_resource type="PackedScene" uid="uid://br4t31vtdruux" path="res://Magic/IceField/IceField.tscn" id="2_wvbyc"]
 [ext_resource type="Texture2D" uid="uid://dypj0hyga2460" path="res://Player/Sprites/Attack/Hit/Hit_Up-Sheet.png" id="4_dkpta"]
 [ext_resource type="Texture2D" uid="uid://cesrekoimi77t" path="res://Player/Sprites/Idle/Idle_Up-Sheet.png" id="4_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://sjoym8p7co2x" path="res://Player/Sprites/Walk/Walk_Down-Sheet.png" id="5_apopc"]
@@ -28,10 +30,10 @@
 [ext_resource type="Script" uid="uid://cp35qxinloqdp" path="res://Player/Scripts/state_stun.gd" id="24_8viyr"]
 [ext_resource type="Script" uid="uid://dej4iof3k6nsp" path="res://Player/Scripts/state.death.gd" id="28_755ss"]
 [ext_resource type="Texture2D" uid="uid://c4ljxougll4yv" path="res://Player/aureole/frame001.png" id="30_6rl0i"]
-[ext_resource type="AudioStream" uid="uid://uoew0s2k533b" path="res://AttackEffect/firball/audio/shoot.mp3" id="30_755ss"]
+[ext_resource type="AudioStream" uid="uid://uoew0s2k533b" path="res://AttackEffect/Projectile/firball/audio/shoot.mp3" id="30_755ss"]
 [ext_resource type="Texture2D" uid="uid://dkfxif82f4do0" path="res://Player/aureole/frame002.png" id="31_7x5p2"]
 [ext_resource type="Texture2D" uid="uid://dkxbd4t7q0nwa" path="res://Player/aureole/frame003.png" id="32_6eb1q"]
-[ext_resource type="PackedScene" uid="uid://bwklqvbghsvwc" path="res://AttackEffect/iceball/iceball.tscn" id="32_i4o1l"]
+[ext_resource type="PackedScene" uid="uid://bwklqvbghsvwc" path="res://AttackEffect/Projectile/iceball/iceball.tscn" id="32_i4o1l"]
 [ext_resource type="Script" uid="uid://jol2y0njl4eh" path="res://AttackComponents/Player/ProjectileComponent.gd" id="33_j2n6q"]
 [ext_resource type="Texture2D" uid="uid://crpsa3uph5ap2" path="res://Player/aureole/frame004.png" id="33_wvbyc"]
 [ext_resource type="Texture2D" uid="uid://bc58vl1fsnr87" path="res://Player/aureole/frame005.png" id="34_gvnt1"]
@@ -1360,6 +1362,8 @@ animations = [{
 collision_layer = 6
 collision_mask = 8388609
 script = ExtResource("1_x3vf3")
+ice_field_scene = ExtResource("2_wvbyc")
+magic_wave_scene = ExtResource("2_6eb1q")
 meteor_rain_scene = ExtResource("2_7x5p2")
 faction = 1
 

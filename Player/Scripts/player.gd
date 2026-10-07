@@ -1,5 +1,12 @@
 class_name Player extends CharacterBody2D
+#冰霜领域
+@export var ice_field_scene: PackedScene
 
+var ice_field_preview: Node2D
+var ice_field_aiming: bool = false
+#魔法波
+var magic_wave_preview: MagicWave
+var magic_wave_aiming: bool = false
 
 #流星雨
 var meteor_rain_preview: MeteorRain
@@ -14,7 +21,8 @@ var invulnerable:bool =false
 
 signal player_damaged
 signal player_destroyed
-
+#魔法波实例
+@export var magic_wave_scene: PackedScene
 #流星雨实例
 @export var meteor_rain_scene: PackedScene
 
@@ -164,25 +172,49 @@ func TakeDamaged(hurt_box:HurtBox):
 		update_hp(99)
 	return
 		
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("meteor_rain"):
-		StartMeteorRain()
-
-	if meteor_aiming and event.is_action_pressed("ui_accept"):
-		ConfirmMeteorRain()
-
-	return
-	
+		
 func update_hp(delta:int)->void:
 	hp = clampi(hp +delta,0,max_hp)
 	PlayerHud.update_hp(hp,max_hp)
 	pass
+		
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("meteor_rain"):
+		StartMeteorRain()
+		
+	if event.is_action_pressed("magic_wave"):
+		StartMagicWave()	
+		
+	if event.is_action_pressed("ice_field"):
+		StartIceField()	
+
+	if meteor_aiming and event.is_action_pressed("ui_accept"):
+		ConfirmMeteorRain()
+
+	if magic_wave_aiming and event.is_action_pressed("ui_accept"):
+		ConfirmMagicWave()
+		
+
+	if ice_field_aiming and event.is_action_pressed("ui_accept"):
+		ConfirmIceField()
 	
+	return
 	
+
+	
+#	陨石法阵---------------------------------------
 func StartMeteorRain() -> void:
+	# 已经在瞄准 → 取消施法
 	if meteor_aiming:
+		meteor_aiming = false
+
+		if meteor_rain_preview:
+			meteor_rain_preview.queue_free()
+			meteor_rain_preview = null
+
 		return
 
+	# 开始瞄准
 	meteor_aiming = true
 
 	meteor_rain_preview = meteor_rain_scene.instantiate()
@@ -197,3 +229,59 @@ func ConfirmMeteorRain() -> void:
 	meteor_aiming = false
 
 	meteor_rain_preview.Confirm()
+
+#魔法波----------------------------------------------
+
+func StartMagicWave() -> void:
+	if magic_wave_aiming:
+		magic_wave_aiming = false
+
+		if magic_wave_preview:
+			magic_wave_preview.queue_free()
+			magic_wave_preview = null
+
+		return
+
+	magic_wave_aiming = true
+
+	magic_wave_preview = magic_wave_scene.instantiate()
+
+	get_tree().current_scene.add_child(magic_wave_preview)
+
+	magic_wave_preview.player = self
+
+
+func ConfirmMagicWave() -> void:
+	if not magic_wave_aiming:
+		return
+
+	magic_wave_aiming = false
+
+	magic_wave_preview.Confirm()
+
+
+#冰霜领域----------------------------------------------
+func StartIceField() -> void:
+	# 已经在瞄准 → 取消施法
+	if ice_field_aiming:
+		ice_field_aiming = false
+		if ice_field_preview:
+
+			ice_field_preview.queue_free()
+			ice_field_preview = null
+		return
+	# 开始瞄准
+	ice_field_aiming = true
+	ice_field_preview = ice_field_scene.instantiate()
+	get_tree().current_scene.add_child(
+		ice_field_preview
+	)
+
+	ice_field_preview.player = self
+
+func ConfirmIceField() -> void:
+	if not ice_field_aiming:
+
+		return
+	ice_field_aiming = false
+	ice_field_preview.Confirm()

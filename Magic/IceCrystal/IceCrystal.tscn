@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://nfx6mor7536n"]
+
+[ext_resource type="Texture2D" uid="uid://qfd46svuervo" path="res://Magic/IceCrystal/Ice VFX 2 Active.png" id="1_2gw8g"]
+[ext_resource type="Script" uid="uid://cxxe2bfk7y6sp" path="res://Magic/IceCrystal/IceCrystal.gd" id="1_ke11n"]
+[ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="3_nbuf3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke11n"]
+atlas = ExtResource("1_2gw8g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbuf3"]
+atlas = ExtResource("1_2gw8g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty7k8"]
+atlas = ExtResource("1_2gw8g")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gekk8"]
+atlas = ExtResource("1_2gw8g")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8m61"]
+atlas = ExtResource("1_2gw8g")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xkem"]
+atlas = ExtResource("1_2gw8g")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2u1a"]
+atlas = ExtResource("1_2gw8g")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj5qb"]
+atlas = ExtResource("1_2gw8g")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5f47r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke11n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbuf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty7k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gekk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8m61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xkem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2u1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj5qb")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ty7k8"]
+radius = 8.0
+height = 16.0
+
+[node name="IceCrystal" type="Node2D" unique_id=1619127297]
+script = ExtResource("1_ke11n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1239573137]
+position = Vector2(1, -17)
+sprite_frames = SubResource("SpriteFrames_5f47r")
+animation = &"idle"
+autoplay = "idle"
+frame = 5
+frame_progress = 0.2416665
+
+[node name="HurtBox" parent="." unique_id=1184801260 instance=ExtResource("3_nbuf3")]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=910857634]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_ty7k8")

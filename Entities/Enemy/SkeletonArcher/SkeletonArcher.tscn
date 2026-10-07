@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dfrasj4kry68f" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="15_m8t1u"]
 [ext_resource type="Script" uid="uid://cmb5dej6fo7j6" path="res://AttackComponents/Others/ProjectileComponent.gd" id="17_4fef1"]
 [ext_resource type="PackedScene" uid="uid://doenu0vpipq8b" path="res://GeneralNodes/HealthBar/HealthBar.tscn" id="17_cnsra"]
-[ext_resource type="PackedScene" uid="uid://c4h0l16kpt5ve" path="res://AttackEffect/Arrow/Arrow.tscn" id="18_r1o3i"]
+[ext_resource type="PackedScene" uid="uid://c4h0l16kpt5ve" path="res://AttackEffect/Projectile/Arrow/Arrow.tscn" id="18_r1o3i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1awoq"]
 atlas = ExtResource("2_4fef1")

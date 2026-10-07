@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dyxw83nf85sn2" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="15_q4wjg"]
 [ext_resource type="PackedScene" uid="uid://dfrasj4kry68f" path="res://GeneralNodes/DetectionBox/detection_box.tscn" id="16_s61vc"]
 [ext_resource type="Script" uid="uid://cmb5dej6fo7j6" path="res://AttackComponents/Others/ProjectileComponent.gd" id="18_pi5qt"]
-[ext_resource type="PackedScene" uid="uid://cjep7814xi01n" path="res://AttackEffect/firball/FireBall.tscn" id="20_ypq1j"]
+[ext_resource type="PackedScene" uid="uid://cjep7814xi01n" path="res://AttackEffect/Projectile/firball/FireBall.tscn" id="20_ypq1j"]
 [ext_resource type="PackedScene" uid="uid://doenu0vpipq8b" path="res://GeneralNodes/HealthBar/HealthBar.tscn" id="21_cwia0"]
 [ext_resource type="PackedScene" uid="uid://dqtaooylm2axb" path="res://AttackEffect/absorb/Absorb.tscn" id="22_r0xhq"]
 
